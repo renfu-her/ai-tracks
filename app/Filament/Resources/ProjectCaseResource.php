@@ -73,9 +73,6 @@ class ProjectCaseResource extends Resource
                     ->searchable()
                     ->sortable(),
 
-                Tables\Columns\TextColumn::make('content')
-                    ->label('內容'),
-
                 Tables\Columns\IconColumn::make('status')
                     ->label('狀態')
                     ->boolean()
