@@ -9,8 +9,4 @@ class CreateProjectCase extends CreateRecord
 {
     protected static string $resource = ProjectCaseResource::class;
 
-    protected function getRedirectUrl(): string
-    {
-        return $this->getResource()::getUrl('index');
-    }
 } 

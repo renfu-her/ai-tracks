@@ -13,7 +13,7 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
-use Mohamedsabil83\FilamentFormsTinyeditor\Components\TinyEditor;
+use Filament\Forms\Components\MarkdownEditor;
 use App\Filament\Resources\ProjectCaseResource\RelationManagers\CasePhotosRelationManager;
 
 class ProjectCaseResource extends Resource
@@ -38,10 +38,17 @@ class ProjectCaseResource extends Resource
                             ->label('名稱')
                             ->required()
                             ->maxLength(255),
-                        TinyEditor::make('content')
+
+                        Forms\Components\TextInput::make('url')
+                            ->label('網址')
+                            ->url()
+                            ->maxLength(255),
+
+                        MarkdownEditor::make('content')
                             ->label('內容')
                             ->minHeight(450)
                             ->columnSpanFull(),
+                            
                         Forms\Components\Toggle::make('status')
                             ->label('狀態')
                             ->default(true),
@@ -59,10 +66,15 @@ class ProjectCaseResource extends Resource
                     ->searchable()
                     ->sortable(),
 
+                Tables\Columns\TextColumn::make('url')
+                    ->label('網址')
+                    ->url(fn ($record) => $record->url)
+                    ->openUrlInNewTab()
+                    ->searchable()
+                    ->sortable(),
+
                 Tables\Columns\TextColumn::make('content')
-                    ->label('內容')
-                    ->limit(50)
-                    ->html(),
+                    ->label('內容'),
 
                 Tables\Columns\IconColumn::make('status')
                     ->label('狀態')
