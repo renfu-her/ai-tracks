@@ -73,7 +73,8 @@ class CasePhotosRelationManager extends RelationManager
             ->columns([
                 Tables\Columns\ImageColumn::make('image')
                     ->label('照片')
-                    ->size(80),
+                    ->height(80)
+                    ->width(null),
 
                 Tables\Columns\TextColumn::make('sort_order')
                     ->label('排序')
