@@ -38,14 +38,10 @@ class ProjectCaseResource extends Resource
                             ->label('名稱')
                             ->required()
                             ->maxLength(255),
-
-
-
                         TinyEditor::make('content')
                             ->label('內容')
-                            ->height(450)
+                            ->minHeight(450)
                             ->columnSpanFull(),
-
                         Forms\Components\Toggle::make('status')
                             ->label('狀態')
                             ->default(true),
