@@ -46,7 +46,7 @@ class ProjectCaseResource extends Resource
 
                         MarkdownEditor::make('content')
                             ->label('內容')
-                            ->minHeight(450)
+                            ->maxHeight(450)
                             ->columnSpanFull(),
                             
                         Forms\Components\Toggle::make('status')
