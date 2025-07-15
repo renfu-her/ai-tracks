@@ -26,6 +26,8 @@ class CasePhotoResource extends Resource
     protected static ?string $pluralModelLabel = '案例照片';
     protected static ?int $navigationSort = 2;
 
+    protected static bool $shouldRegisterNavigation = false;
+
     public static function form(Form $form): Form
     {
         return $form
