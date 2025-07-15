@@ -20,6 +20,9 @@ class CasePhotosRelationManager extends RelationManager
 
     protected static ?string $title = '案例照片';
 
+    protected static ?string $modelLabel = '案例照片';
+    protected static ?string $pluralModelLabel = '案例照片';
+
     public function form(Form $form): Form
     {
         return $form
