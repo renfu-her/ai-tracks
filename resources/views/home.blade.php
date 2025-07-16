@@ -72,7 +72,9 @@
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <h1 class="display-4 fw-bold mb-4">AI 技術的未來</h1>
-                    <p class="lead mb-4">我們專注於提供最先進的 AI 解決方案，為您的業務帶來革命性的改變。</p>
+                    <p class="lead mb-4">
+                        我們專注於提供最先進的 AI 解決方案，為您的業務帶來革命性的改變。
+                    </p>
                     <a href="{{ route('cases') }}" class="btn btn-light btn-lg me-3">
                         <i class="fas fa-eye me-2"></i>查看案例
                     </a>
