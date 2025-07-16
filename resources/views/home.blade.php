@@ -43,8 +43,9 @@
                     <img src="{{ Storage::url($case->casePhotos->first()->image) }}" 
                          class="card-img-top" alt="{{ $case->name }}" style="height: 200px; object-fit: cover;">
                     @else
-                    <img src="https://via.placeholder.com/400x200/f8f9fa/6c757d?text=No+Image" 
-                         class="card-img-top" alt="No Image" style="height: 200px; object-fit: cover;">
+                    <div class="d-flex align-items-center justify-content-center bg-light" style="height: 200px;">
+                        <span class="text-muted">無法載入圖片</span>
+                    </div>
                     @endif
                     
                     <div class="card-body">

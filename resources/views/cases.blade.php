@@ -74,9 +74,6 @@
                         @if($case->sub_name)
                         <h6 class="card-subtitle text-muted mb-3">{{ $case->sub_name }}</h6>
                         @endif
-                        <p class="card-text text-muted flex-grow-1">
-                            {{ Str::limit(strip_tags($case->content), 120) }}
-                        </p>
                         
                         <div class="mt-auto">
                             <div class="d-flex justify-content-between align-items-center">
