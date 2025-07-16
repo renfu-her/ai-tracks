@@ -98,6 +98,7 @@ class FrontendController extends Controller
         return response()->json([
             'id' => $case->id,
             'name' => $case->name,
+            'sub_name' => $case->sub_name,
             'url' => $case->url,
             'content' => $case->content,
             'status' => $case->status,

@@ -39,6 +39,10 @@ class ProjectCaseResource extends Resource
                             ->required()
                             ->maxLength(255),
 
+                        Forms\Components\TextInput::make('sub_name')
+                            ->label('副標題')
+                            ->maxLength(255),
+
                         Forms\Components\TextInput::make('url')
                             ->label('網址')
                             ->url()
@@ -63,6 +67,11 @@ class ProjectCaseResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('name')
                     ->label('名稱')
+                    ->searchable()
+                    ->sortable(),
+
+                Tables\Columns\TextColumn::make('sub_name')
+                    ->label('副標題')
                     ->searchable()
                     ->sortable(),
 

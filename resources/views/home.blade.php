@@ -48,7 +48,10 @@
                     @endif
                     
                     <div class="card-body">
-                        <h5 class="card-title fw-bold">{{ $case->name }}</h5>
+                        <h5 class="card-title fw-bold mb-2">{{ $case->name }}</h5>
+                        @if($case->sub_name)
+                        <h6 class="card-subtitle text-muted mb-3">{{ $case->sub_name }}</h6>
+                        @endif
                         <p class="card-text text-muted">{{ Str::limit(strip_tags($case->content), 100) }}</p>
                         @if($case->url)
                         <a href="{{ $case->url }}" class="btn btn-outline-primary btn-sm" target="_blank">

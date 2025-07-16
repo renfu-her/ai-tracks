@@ -9,6 +9,7 @@ class ProjectCase extends Model
 {
     protected $fillable = [
         'name',
+        'sub_name',
         'url',
         'content',
         'status',

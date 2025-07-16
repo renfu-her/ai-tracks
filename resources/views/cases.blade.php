@@ -70,7 +70,10 @@
                     @endif
                     
                     <div class="card-body d-flex flex-column">
-                        <h5 class="card-title fw-bold mb-3">{{ $case->name }}</h5>
+                        <h5 class="card-title fw-bold mb-2">{{ $case->name }}</h5>
+                        @if($case->sub_name)
+                        <h6 class="card-subtitle text-muted mb-3">{{ $case->sub_name }}</h6>
+                        @endif
                         <p class="card-text text-muted flex-grow-1">
                             {{ Str::limit(strip_tags($case->content), 120) }}
                         </p>
@@ -167,6 +170,7 @@ function showCaseDetails(caseId) {
             <div class="mb-3">
                 <strong>案例名稱：</strong> ${data.name}
             </div>
+            ${data.sub_name ? `<div class="mb-3"><strong>副標題：</strong> ${data.sub_name}</div>` : ''}
             ${data.url ? `<div class="mb-3"><strong>網站連結：</strong> <a href="${data.url}" target="_blank">${data.url}</a></div>` : ''}
             <div class="mb-3">
                 <strong>案例內容：</strong>
