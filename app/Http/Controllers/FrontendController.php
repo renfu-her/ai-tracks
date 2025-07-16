@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\ProjectCase;
 use App\Models\News;
 use App\Models\Contact;
+use App\Models\Slider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -23,7 +24,18 @@ class FrontendController extends Controller
             ->take(3)
             ->get();
 
-        return view('home', compact('featuredCases', 'latestNews'));
+        $sliders = Slider::where('is_active', true)
+            ->orderBy('sort')
+            ->get();
+
+        return view(
+            'home',
+            compact(
+                'featuredCases',
+                'latestNews',
+                'sliders'
+            )
+        );
     }
 
     public function cases(Request $request)
@@ -94,7 +106,7 @@ class FrontendController extends Controller
     public function getCase($id)
     {
         $case = ProjectCase::with('casePhotos')->findOrFail($id);
-        
+
         return response()->json([
             'id' => $case->id,
             'name' => $case->name,
@@ -103,7 +115,7 @@ class FrontendController extends Controller
             'content' => $case->content,
             'status' => $case->status,
             'created_at' => $case->created_at,
-            'case_photos' => $case->casePhotos->map(function($photo) {
+            'case_photos' => $case->casePhotos->map(function ($photo) {
                 return [
                     'id' => $photo->id,
                     'image' => $photo->image,
@@ -116,7 +128,7 @@ class FrontendController extends Controller
     public function getNews($id)
     {
         $news = News::findOrFail($id);
-        
+
         return response()->json([
             'id' => $news->id,
             'title' => $news->title,
@@ -126,4 +138,4 @@ class FrontendController extends Controller
             'is_active' => $news->is_active,
         ]);
     }
-} 
+}

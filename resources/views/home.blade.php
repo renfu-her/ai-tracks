@@ -3,26 +3,91 @@
 @section('title', 'AI Tracks - 首頁')
 
 @section('content')
-<!-- Hero Section -->
-<section class="hero-section bg-gradient-primary text-white py-5">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6">
-                <h1 class="display-4 fw-bold mb-4">AI 技術的未來</h1>
-                <p class="lead mb-4">我們專注於提供最先進的 AI 解決方案，為您的業務帶來革命性的改變。</p>
-                <a href="{{ route('cases') }}" class="btn btn-light btn-lg me-3">
-                    <i class="fas fa-eye me-2"></i>查看案例
-                </a>
-                <a href="{{ route('contact') }}" class="btn btn-outline-light btn-lg">
-                    <i class="fas fa-phone me-2"></i>聯絡我們
-                </a>
+<!-- Hero Slider Section -->
+<section class="hero-slider-section">
+    @if($sliders->count() > 0)
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+        <!-- Indicators -->
+        <div class="carousel-indicators">
+            @foreach($sliders as $index => $slider)
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="{{ $index }}" 
+                    class="{{ $index === 0 ? 'active' : '' }}" aria-current="{{ $index === 0 ? 'true' : 'false' }}" 
+                    aria-label="Slide {{ $index + 1 }}"></button>
+            @endforeach
+        </div>
+
+        <!-- Slides -->
+        <div class="carousel-inner">
+            @foreach($sliders as $index => $slider)
+            <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
+                <div class="hero-slide" style="background-image: url('{{ Storage::url($slider->image) }}');">
+                    <div class="hero-overlay"></div>
+                    <div class="container">
+                        <div class="row align-items-center min-vh-75">
+                            <div class="col-lg-6">
+                                <div class="hero-content text-white">
+                                    <h1 class="display-4 fw-bold mb-4">{{ $slider->title }}</h1>
+                                    @if($slider->description)
+                                    <p class="lead mb-4">{{ $slider->description }}</p>
+                                    @endif
+                                    <div class="hero-buttons">
+                                        <a href="{{ route('cases') }}" class="btn btn-light btn-lg me-3">
+                                            <i class="fas fa-eye me-2"></i>查看案例
+                                        </a>
+                                        @if($slider->link)
+                                        <a href="{{ $slider->link }}" class="btn btn-outline-light btn-lg" target="_blank">
+                                            <i class="fas fa-external-link-alt me-2"></i>了解更多
+                                        </a>
+                                        @else
+                                        <a href="{{ route('contact') }}" class="btn btn-outline-light btn-lg">
+                                            <i class="fas fa-phone me-2"></i>聯絡我們
+                                        </a>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-lg-6">
-                <img src="https://via.placeholder.com/600x400/007bff/ffffff?text=AI+Technology" 
-                     alt="AI Technology" class="img-fluid rounded shadow">
+            @endforeach
+        </div>
+
+        <!-- Controls -->
+        @if($sliders->count() > 1)
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+        @endif
+    </div>
+    @else
+    <!-- Fallback Hero Section -->
+    <section class="hero-section bg-gradient-primary text-white py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">AI 技術的未來</h1>
+                    <p class="lead mb-4">我們專注於提供最先進的 AI 解決方案，為您的業務帶來革命性的改變。</p>
+                    <a href="{{ route('cases') }}" class="btn btn-light btn-lg me-3">
+                        <i class="fas fa-eye me-2"></i>查看案例
+                    </a>
+                    <a href="{{ route('contact') }}" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-phone me-2"></i>聯絡我們
+                    </a>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://via.placeholder.com/600x400/007bff/ffffff?text=AI+Technology" 
+                         alt="AI Technology" class="img-fluid rounded shadow">
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+    @endif
 </section>
 
 <!-- Featured Cases Section -->
