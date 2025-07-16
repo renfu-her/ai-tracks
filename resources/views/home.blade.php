@@ -23,7 +23,7 @@
                 <div class="hero-slide" style="background-image: url('{{ Storage::url($slider->image) }}');">
                     <div class="hero-overlay"></div>
                     <div class="container">
-                        <div class="row align-items-center min-vh-75">
+                        <div class="row align-items-center hero-content-wrapper">
                             <div class="col-lg-6">
                                 <div class="hero-content text-white">
                                     <h1 class="display-4 fw-bold mb-4">{{ $slider->title }}</h1>

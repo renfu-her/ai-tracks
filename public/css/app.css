@@ -60,9 +60,13 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
-    min-height: 75vh;
+    height: 450px;
     display: flex;
     align-items: center;
+}
+
+.hero-content-wrapper {
+    min-height: 450px;
 }
 
 .hero-overlay {
@@ -114,9 +118,7 @@ body {
     height: 3rem;
 }
 
-.min-vh-75 {
-    min-height: 75vh;
-}
+/* 移除舊的 min-vh-75 類別，因為已經不需要了 */
 
 /* Card Styles */
 .card {
@@ -269,6 +271,16 @@ section {
 @media (max-width: 768px) {
     .hero-section {
         text-align: center;
+    }
+    
+    .hero-slide {
+        height: 100vh;
+        min-height: 400px;
+    }
+    
+    .hero-content-wrapper {
+        min-height: 100vh;
+        min-height: 400px;
     }
     
     .display-4 {
