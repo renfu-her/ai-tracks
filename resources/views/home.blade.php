@@ -26,7 +26,7 @@
                         <div class="row align-items-center hero-content-wrapper">
                             <div class="col-lg-6">
                                 <div class="hero-content text-white">
-                                    <h1 class="display-3 fw-bold mb-4">{{ $slider->title }}</h1>
+                                    <h1 class="display-5 fw-bold mb-4">{{ $slider->title }}</h1>
                                     @if($slider->description)
                                     <p class="lead mb-4">{{ $slider->description }}</p>
                                     @endif
