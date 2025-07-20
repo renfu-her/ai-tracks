@@ -173,7 +173,20 @@ function showCaseDetails(caseId) {
                 .replace(/\*(.*?)\*/g, '<em>$1</em>')
                 .replace(/`(.*?)`/g, '<code>$1</code>')
                 .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank">$1</a>')
+                .replace(/^---$/gm, '<hr>')
                 .replace(/\n/g, '<br>');
+            
+            // Convert tables
+            contentHtml = contentHtml.replace(/\|(.+)\|/g, function(match, row) {
+                const cells = row.split('|').map(cell => cell.trim());
+                const cellHtml = cells.map(cell => `<td>${cell}</td>`).join('');
+                return `<tr>${cellHtml}</tr>`;
+            });
+            
+            // Wrap consecutive table rows in table tags
+            contentHtml = contentHtml.replace(/(<tr>.*?<\/tr>)+/g, function(match) {
+                return `<table class="table table-bordered table-striped">${match}</table>`;
+            });
         }
         
         $('#caseModalTitle').text(data.name);
@@ -268,6 +281,28 @@ function showCaseDetails(caseId) {
 
 .markdown-content a:hover {
     text-decoration: underline;
+}
+
+.markdown-content table {
+    width: 100%;
+    margin-bottom: 1rem;
+    border-collapse: collapse;
+}
+
+.markdown-content table td {
+    padding: 0.5rem;
+    border: 1px solid #dee2e6;
+    vertical-align: top;
+}
+
+.markdown-content table tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.markdown-content hr {
+    border: none;
+    border-top: 2px solid #dee2e6;
+    margin: 1.5rem 0;
 }
 </style>
 @endpush 
