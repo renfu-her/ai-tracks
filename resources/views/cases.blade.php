@@ -179,7 +179,7 @@ function showCaseDetails(caseId) {
             ${data.url ? `<div class="mb-3"><strong>網站連結：</strong> <a href="${data.url}" target="_blank">${data.url}</a></div>` : ''}
             <div class="mb-3">
                 <strong>案例內容：</strong>
-                <div class="mt-2 markdown-content">${contentHtml}</div>
+                <div class="mt-2 markdown-content markdown-body">${contentHtml}</div>
             </div>
             <div class="mb-3">
                 <strong>狀態：</strong> 
@@ -199,6 +199,7 @@ function showCaseDetails(caseId) {
 @endpush
 
 @push('styles')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.8.1/github-markdown.css">
 <style>
 .hover-lift {
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
@@ -213,94 +214,22 @@ function showCaseDetails(caseId) {
     background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
 }
 
-/* Discord Markdown Content Styles */
-.markdown-content h1 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    color: #333;
+/* GitHub Markdown Content Styles */
+.markdown-content {
+    /* 使用 GitHub Markdown 樣式 */
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+    font-size: 16px;
+    line-height: 1.5;
+    word-wrap: break-word;
 }
 
-.markdown-content h2 {
-    font-size: 1.25rem;
-    font-weight: bold;
-    margin-bottom: 0.75rem;
-    color: #333;
+/* 調整 GitHub Markdown 在 Modal 中的顯示 */
+.markdown-content.markdown-body {
+    background-color: transparent;
+    color: inherit;
 }
 
-.markdown-content h3 {
-    font-size: 1.1rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-    color: #333;
-}
-
-.markdown-content strong {
-    font-weight: bold;
-    color: #333;
-}
-
-.markdown-content em {
-    font-style: italic;
-    color: #666;
-}
-
-.markdown-content code {
-    background-color: #f8f9fa;
-    padding: 0.2rem 0.4rem;
-    border-radius: 0.25rem;
-    font-family: 'Courier New', monospace;
-    font-size: 0.9em;
-    color: #e83e8c;
-}
-
-.markdown-content pre {
-    background-color: #f8f9fa;
-    padding: 1rem;
-    border-radius: 0.25rem;
-    overflow-x: auto;
-    margin-bottom: 1rem;
-}
-
-.markdown-content pre code {
-    background: none;
-    padding: 0;
-    color: #333;
-}
-
-.markdown-content a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-.markdown-content a:hover {
-    text-decoration: underline;
-}
-
-.markdown-content blockquote {
-    border-left: 4px solid #007bff;
-    padding-left: 1rem;
-    margin: 1rem 0;
-    color: #666;
-    font-style: italic;
-}
-
-.markdown-content ul,
-.markdown-content ol {
-    margin-bottom: 1rem;
-    padding-left: 2rem;
-}
-
-.markdown-content li {
-    margin-bottom: 0.25rem;
-}
-
-.markdown-content p {
-    margin-bottom: 1rem;
-    line-height: 1.6;
-}
-
-/* Discord specific styles */
+/* Discord specific styles for spoiler */
 .markdown-content .spoiler {
     background-color: #333;
     color: #333;
