@@ -277,6 +277,35 @@ function showCaseDetails(caseId) {
     color: #1a7f37 !important;
 }
 
+/* 修正程式碼區塊的文字顏色 */
+.markdown-content.markdown-body pre {
+    background-color: #f6f8fa !important;
+    color: #333 !important;
+    border: 1px solid #d1d9e0 !important;
+}
+
+.markdown-content.markdown-body pre code {
+    background-color: transparent !important;
+    color: #333 !important;
+    padding: 0 !important;
+}
+
+.markdown-content.markdown-body code {
+    background-color: #f6f8fa !important;
+    color: #e36209 !important;
+    border: 1px solid #d1d9e0 !important;
+}
+
+/* 修正語法高亮區塊的文字顏色 */
+.markdown-content.markdown-body .highlight {
+    background-color: #f6f8fa !important;
+}
+
+.markdown-content.markdown-body .highlight pre {
+    background-color: #f6f8fa !important;
+    color: #333 !important;
+}
+
 /* Discord specific styles for spoiler */
 .markdown-content .spoiler {
     background-color: #333;
