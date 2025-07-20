@@ -70,41 +70,41 @@
                 @endif
             </div>
         @else
-            <!-- Fallback Hero Section -->
-            <section class="hero-section bg-gradient-primary text-white py-5">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-6">
-                            <h1 class="display-4 fw-bold mb-4">AI 技術的未來</h1>
-                            <p class="lead mb-4">
-                                我們專注於提供最先進的 AI 解決方案，為您的業務帶來革命性的改變。
-                            </p>
-                            <a href="{{ route('cases') }}" class="btn btn-light btn-lg me-3">
-                                <i class="fas fa-eye me-2"></i>查看案例
-                            </a>
-                            <a href="{{ route('contact') }}" class="btn btn-outline-light btn-lg">
-                                <i class="fas fa-phone me-2"></i>聯絡我們
-                            </a>
-                        </div>
-                        <div class="col-lg-6">
-                            <img src="https://via.placeholder.com/600x400/007bff/ffffff?text=AI+Technology"
-                                alt="AI Technology" class="img-fluid rounded shadow">
-                        </div>
-                    </div>
+                <!-- Fallback Hero Section -->
+    <section class="hero-section bg-gradient-primary text-white py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">AI 助力程式開發與 UI/UX 設計</h1>
+                    <p class="lead mb-4">
+                        結合 AI 智能與設計美學，打造高效且直覺的開發體驗，提升效率與創意品質。
+                    </p>
+                    <a href="{{ route('cases') }}" class="btn btn-light btn-lg me-3">
+                        <i class="fas fa-eye me-2"></i>查看案例
+                    </a>
+                    <a href="{{ route('contact') }}" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-phone me-2"></i>聯絡我們
+                    </a>
                 </div>
-            </section>
+                <div class="col-lg-6">
+                    <img src="https://via.placeholder.com/600x400/007bff/ffffff?text=AI+Development+Design" 
+                         alt="AI Development & Design" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
         @endif
     </section>
 
     <!-- Featured Cases Section -->
     <section class="py-5">
         <div class="container">
-            <div class="row mb-4">
-                <div class="col-12 text-center">
-                    <h2 class="fw-bold mb-3">精選案例</h2>
-                    <p class="text-muted">探索我們最新的成功案例</p>
-                </div>
+                    <div class="row mb-4">
+            <div class="col-12 text-center">
+                <h2 class="fw-bold mb-3">精選案例</h2>
+                <p class="text-muted">探索我們最新的 AI 開發與設計案例</p>
             </div>
+        </div>
 
             <div class="row">
                 @foreach ($featuredCases as $case)
@@ -147,12 +147,12 @@
     <!-- Latest News Section -->
     <section class="bg-light py-5">
         <div class="container">
-            <div class="row mb-4">
-                <div class="col-12 text-center">
-                    <h2 class="fw-bold mb-3">最新消息</h2>
-                    <p class="text-muted">掌握最新的 AI 技術趨勢</p>
-                </div>
+                    <div class="row mb-4">
+            <div class="col-12 text-center">
+                <h2 class="fw-bold mb-3">最新消息</h2>
+                <p class="text-muted">掌握最新的 AI 開發與設計趨勢</p>
             </div>
+        </div>
 
             <div class="row">
                 @foreach ($latestNews as $news)
@@ -194,46 +194,46 @@
     <!-- Services Section -->
     <section class="py-5">
         <div class="container">
-            <div class="row mb-4">
-                <div class="col-12 text-center">
-                    <h2 class="fw-bold mb-3">我們的服務</h2>
-                    <p class="text-muted">專業的 AI 技術解決方案</p>
-                </div>
+                    <div class="row mb-4">
+            <div class="col-12 text-center">
+                <h2 class="fw-bold mb-3">我們的服務</h2>
+                <p class="text-muted">專業的 AI 開發與設計解決方案</p>
             </div>
+        </div>
 
             <div class="row">
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="text-center">
-                        <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
-                            style="width: 80px; height: 80px;">
-                            <i class="fas fa-brain fa-2x text-primary"></i>
-                        </div>
-                        <h5 class="fw-bold">機器學習</h5>
-                        <p class="text-muted">客製化的機器學習模型開發，為您的業務提供智能分析。</p>
+                            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="text-center">
+                    <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
+                         style="width: 80px; height: 80px;">
+                        <i class="fas fa-code fa-2x text-primary"></i>
                     </div>
+                    <h5 class="fw-bold">AI 程式開發</h5>
+                    <p class="text-muted">結合 AI 技術的智能程式開發，提升開發效率與程式碼品質。</p>
                 </div>
-
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="text-center">
-                        <div class="bg-success bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
-                            style="width: 80px; height: 80px;">
-                            <i class="fas fa-robot fa-2x text-success"></i>
-                        </div>
-                        <h5 class="fw-bold">自動化流程</h5>
-                        <p class="text-muted">智能自動化流程設計，提升工作效率與準確性。</p>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="text-center">
+                    <div class="bg-success bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
+                         style="width: 80px; height: 80px;">
+                        <i class="fas fa-palette fa-2x text-success"></i>
                     </div>
+                    <h5 class="fw-bold">UI/UX 設計</h5>
+                    <p class="text-muted">AI 輔助的直覺化設計，創造美觀且易用的使用者體驗。</p>
                 </div>
-
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="text-center">
-                        <div class="bg-warning bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
-                            style="width: 80px; height: 80px;">
-                            <i class="fas fa-chart-line fa-2x text-warning"></i>
-                        </div>
-                        <h5 class="fw-bold">數據分析</h5>
-                        <p class="text-muted">深度數據分析與視覺化，發掘隱藏的商業價值。</p>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="text-center">
+                    <div class="bg-warning bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
+                         style="width: 80px; height: 80px;">
+                        <i class="fas fa-lightbulb fa-2x text-warning"></i>
                     </div>
+                    <h5 class="fw-bold">創意優化</h5>
+                    <p class="text-muted">AI 驅動的創意發想與設計優化，激發無限創意可能。</p>
                 </div>
+            </div>
             </div>
         </div>
     </section>
