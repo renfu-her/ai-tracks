@@ -127,7 +127,7 @@
 @endsection
 
 @push('scripts')
-<script src="https://cdn.jsdelivr.net/npm/markdown@0.5.0/lib/markdown.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/discord-markdown-parser@1.2.0/dist/index.min.js"></script>
 <script>
 $(document).ready(function() {
     // Sort functionality
@@ -162,11 +162,11 @@ function showCaseDetails(caseId) {
             photosHtml += '</div>';
         }
         
-        // Convert markdown to HTML using markdown-js
+        // Convert markdown to HTML using discord-markdown-parser
         let contentHtml = '';
         if (data.content) {
-            // Use markdown-js library to convert markdown to HTML
-            contentHtml = markdown.toHTML(data.content);
+            // Use discord-markdown-parser library to convert markdown to HTML
+            contentHtml = DiscordMarkdownParser.parse(data.content);
         }
         
         $('#caseModalTitle').text(data.name);
@@ -213,7 +213,7 @@ function showCaseDetails(caseId) {
     background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
 }
 
-/* Markdown Content Styles */
+/* Discord Markdown Content Styles */
 .markdown-content h1 {
     font-size: 1.5rem;
     font-weight: bold;
@@ -230,27 +230,6 @@ function showCaseDetails(caseId) {
 
 .markdown-content h3 {
     font-size: 1.1rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-    color: #333;
-}
-
-.markdown-content h4 {
-    font-size: 1rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-    color: #333;
-}
-
-.markdown-content h5 {
-    font-size: 0.9rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-    color: #333;
-}
-
-.markdown-content h6 {
-    font-size: 0.8rem;
     font-weight: bold;
     margin-bottom: 0.5rem;
     color: #333;
@@ -298,34 +277,6 @@ function showCaseDetails(caseId) {
     text-decoration: underline;
 }
 
-.markdown-content table {
-    width: 100%;
-    margin-bottom: 1rem;
-    border-collapse: collapse;
-}
-
-.markdown-content table th,
-.markdown-content table td {
-    padding: 0.5rem;
-    border: 1px solid #dee2e6;
-    vertical-align: top;
-}
-
-.markdown-content table th {
-    background-color: #f8f9fa;
-    font-weight: bold;
-}
-
-.markdown-content table tr:nth-child(even) {
-    background-color: #f8f9fa;
-}
-
-.markdown-content hr {
-    border: none;
-    border-top: 2px solid #dee2e6;
-    margin: 1.5rem 0;
-}
-
 .markdown-content blockquote {
     border-left: 4px solid #007bff;
     padding-left: 1rem;
@@ -347,6 +298,24 @@ function showCaseDetails(caseId) {
 .markdown-content p {
     margin-bottom: 1rem;
     line-height: 1.6;
+}
+
+/* Discord specific styles */
+.markdown-content .spoiler {
+    background-color: #333;
+    color: #333;
+    padding: 0.1rem 0.3rem;
+    border-radius: 0.2rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+.markdown-content .spoiler:hover {
+    color: #fff;
+}
+
+.markdown-content .spoiler.revealed {
+    color: #fff;
 }
 </style>
 @endpush 
