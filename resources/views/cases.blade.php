@@ -229,6 +229,54 @@ function showCaseDetails(caseId) {
     color: inherit;
 }
 
+/* 修正表格文字顏色，確保在 Modal 中清楚可見 */
+.markdown-content.markdown-body table {
+    color: #333 !important;
+}
+
+.markdown-content.markdown-body table th {
+    color: #333 !important;
+    background-color: #f6f8fa !important;
+    border-color: #d1d9e0 !important;
+}
+
+.markdown-content.markdown-body table td {
+    color: #333 !important;
+    border-color: #d1d9e0 !important;
+}
+
+.markdown-content.markdown-body table tr:nth-child(even) {
+    background-color: #f6f8fa !important;
+}
+
+.markdown-content.markdown-body table tr:nth-child(odd) {
+    background-color: #ffffff !important;
+}
+
+/* 確保所有文字在 Modal 中清楚可見 */
+.markdown-content.markdown-body h1,
+.markdown-content.markdown-body h2,
+.markdown-content.markdown-body h3,
+.markdown-content.markdown-body h4,
+.markdown-content.markdown-body h5,
+.markdown-content.markdown-body h6,
+.markdown-content.markdown-body p,
+.markdown-content.markdown-body li,
+.markdown-content.markdown-body strong,
+.markdown-content.markdown-body em,
+.markdown-content.markdown-body code,
+.markdown-content.markdown-body blockquote {
+    color: #333 !important;
+}
+
+.markdown-content.markdown-body a {
+    color: #0969da !important;
+}
+
+.markdown-content.markdown-body a:hover {
+    color: #1a7f37 !important;
+}
+
 /* Discord specific styles for spoiler */
 .markdown-content .spoiler {
     background-color: #333;
