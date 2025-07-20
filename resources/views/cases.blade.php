@@ -127,7 +127,7 @@
 @endsection
 
 @push('scripts')
-<script src="https://cdn.jsdelivr.net/npm/discord-markdown-parser@1.2.0/dist/index.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.0/marked.min.js"></script>
 <script>
 $(document).ready(function() {
     // Sort functionality
@@ -162,11 +162,11 @@ function showCaseDetails(caseId) {
             photosHtml += '</div>';
         }
         
-        // Convert markdown to HTML using discord-markdown-parser
+        // Convert markdown to HTML using marked
         let contentHtml = '';
         if (data.content) {
-            // Use discord-markdown-parser library to convert markdown to HTML
-            contentHtml = DiscordMarkdownParser.parse(data.content);
+            // Use marked library to convert markdown to HTML
+            contentHtml = marked.parse(data.content);
         }
         
         $('#caseModalTitle').text(data.name);
