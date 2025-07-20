@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'AI Tracks - 專業案例展示')</title>
 
-    <link rel="icon" href="{{ asset('images/ai-tracks_logo.png') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('images/ai-tracks_logo-2.png') }}" type="image/x-icon">
     
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
