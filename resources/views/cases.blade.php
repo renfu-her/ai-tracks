@@ -161,6 +161,21 @@ function showCaseDetails(caseId) {
             photosHtml += '</div>';
         }
         
+        // Convert markdown to HTML
+        let contentHtml = '';
+        if (data.content) {
+            // Simple markdown to HTML conversion
+            contentHtml = data.content
+                .replace(/^### (.*$)/gim, '<h3>$1</h3>')
+                .replace(/^## (.*$)/gim, '<h2>$1</h2>')
+                .replace(/^# (.*$)/gim, '<h1>$1</h1>')
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                .replace(/`(.*?)`/g, '<code>$1</code>')
+                .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank">$1</a>')
+                .replace(/\n/g, '<br>');
+        }
+        
         $('#caseModalTitle').text(data.name);
         $('#caseModalBody').html(`
             ${photosHtml}
@@ -171,7 +186,7 @@ function showCaseDetails(caseId) {
             ${data.url ? `<div class="mb-3"><strong>網站連結：</strong> <a href="${data.url}" target="_blank">${data.url}</a></div>` : ''}
             <div class="mb-3">
                 <strong>案例內容：</strong>
-                <div class="mt-2">${data.content}</div>
+                <div class="mt-2 markdown-content">${contentHtml}</div>
             </div>
             <div class="mb-3">
                 <strong>狀態：</strong> 
@@ -203,6 +218,56 @@ function showCaseDetails(caseId) {
 
 .bg-gradient-primary {
     background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+}
+
+/* Markdown Content Styles */
+.markdown-content h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.markdown-content h2 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.75rem;
+    color: #333;
+}
+
+.markdown-content h3 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.markdown-content strong {
+    font-weight: bold;
+    color: #333;
+}
+
+.markdown-content em {
+    font-style: italic;
+    color: #666;
+}
+
+.markdown-content code {
+    background-color: #f8f9fa;
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.25rem;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    color: #e83e8c;
+}
+
+.markdown-content a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.markdown-content a:hover {
+    text-decoration: underline;
 }
 </style>
 @endpush 
