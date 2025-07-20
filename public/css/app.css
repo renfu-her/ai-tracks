@@ -14,7 +14,46 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: #333 !important;
+}
+
+/* 確保所有一般文字元素都有正確的顏色 */
+h1, h2, h3, h4, h5, h6, p, span, div, a, li, td, th {
+    color: inherit;
+}
+
+/* 確保卡片內容文字可見 */
+.card-title, .card-text, .card-subtitle {
+    color: #333 !important;
+}
+
+/* 確保按鈕文字可見 */
+.btn {
+    color: inherit;
+}
+
+.btn-primary {
+    color: #fff !important;
+}
+
+.btn-outline-primary {
+    color: #007bff !important;
+}
+
+.btn-outline-primary:hover {
+    color: #fff !important;
+}
+
+.btn-light {
+    color: #333 !important;
+}
+
+.btn-outline-light {
+    color: #fff !important;
+}
+
+.btn-outline-light:hover {
+    color: #333 !important;
 }
 
 /* Header Styles */
@@ -181,10 +220,29 @@ section {
 .display-4, .display-5 {
     font-weight: 700;
     line-height: 1.2;
+    color: inherit !important;
 }
 
 .fw-bold {
     font-weight: 700 !important;
+}
+
+/* 確保標題文字可見 */
+.display-4, .display-5, .display-6 {
+    color: inherit !important;
+}
+
+/* 確保段落文字可見 */
+.lead {
+    color: inherit !important;
+}
+
+.text-muted {
+    color: #6c757d !important;
+}
+
+.text-white {
+    color: #fff !important;
 }
 
 /* Badge Styles */
@@ -192,6 +250,15 @@ section {
     font-weight: 500;
     padding: 0.5em 0.75em;
     border-radius: 6px;
+    color: #fff !important;
+}
+
+.badge.bg-success {
+    color: #fff !important;
+}
+
+.badge.bg-secondary {
+    color: #fff !important;
 }
 
 /* Form Styles */
