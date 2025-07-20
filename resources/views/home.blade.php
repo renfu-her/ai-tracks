@@ -109,28 +109,33 @@
             <div class="row">
                 @foreach ($featuredCases as $case)
                     <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100 shadow-sm border-0">
-                            @if ($case->casePhotos->count() > 0)
-                                <img src="{{ Storage::url($case->casePhotos->first()->image) }}" class="card-img-top"
-                                    alt="{{ $case->name }}" style="height: 200px; object-fit: cover;">
-                            @else
-                                <div class="d-flex align-items-center justify-content-center bg-light"
-                                    style="height: 200px;">
-                                    <span class="text-muted">無法載入圖片</span>
-                                </div>
-                            @endif
-
-                            <div class="card-body">
-                                <h5 class="card-title fw-bold mb-2">{{ $case->name }}</h5>
-                                @if ($case->sub_name)
-                                    <h6 class="card-subtitle text-muted mb-3">{{ $case->sub_name }}</h6>
+                        <div class="card h-100 shadow-sm border-0 hover-lift">
+                            <a href="{{ route('cases') }}" class="text-decoration-none">
+                                @if ($case->casePhotos->count() > 0)
+                                    <img src="{{ Storage::url($case->casePhotos->first()->image) }}" class="card-img-top"
+                                        alt="{{ $case->name }}" style="height: 200px; object-fit: cover;">
+                                @else
+                                    <div class="d-flex align-items-center justify-content-center bg-light"
+                                        style="height: 200px;">
+                                        <span class="text-muted">無法載入圖片</span>
+                                    </div>
                                 @endif
-                                @if ($case->url)
+
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold mb-2 text-dark">{{ $case->name }}</h5>
+                                    @if ($case->sub_name)
+                                        <h6 class="card-subtitle text-muted mb-3">{{ $case->sub_name }}</h6>
+                                    @endif
+                                </div>
+                            </a>
+                            
+                            @if ($case->url)
+                                <div class="card-body pt-0">
                                     <a href="{{ $case->url }}" class="btn btn-outline-primary btn-sm" target="_blank">
                                         <i class="fas fa-external-link-alt me-1"></i>查看網站
                                     </a>
-                                @endif
-                            </div>
+                                </div>
+                            @endif
                         </div>
                     </div>
                 @endforeach
