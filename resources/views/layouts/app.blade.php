@@ -72,9 +72,8 @@
                 <div class="col-md-3">
                     <h6 class="mb-3">聯絡資訊</h6>
                     <ul class="list-unstyled text-muted">
-                        <li><i class="fas fa-phone me-2"></i>02-1234-5678</li>
-                        <li><i class="fas fa-envelope me-2"></i>info@aitracks.com</li>
-                        <li><i class="fas fa-map-marker-alt me-2"></i>台北市信義區</li>
+                        <li><i class="fas fa-phone me-2"></i>0922-013-171</li>
+                        <li><i class="fas fa-envelope me-2"></i>renfu.her@gmail.com</li>
                     </ul>
                 </div>
             </div>

@@ -101,24 +101,13 @@
                         <h4 class="fw-bold mb-4">聯絡資訊</h4>
                         
                         <div class="d-flex align-items-center mb-3">
-                            <div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center me-3" 
-                                 style="width: 50px; height: 50px;">
-                                <i class="fas fa-map-marker-alt text-primary"></i>
-                            </div>
-                            <div>
-                                <h6 class="mb-1">地址</h6>
-                                <p class="text-muted mb-0">台北市信義區信義路五段7號</p>
-                            </div>
-                        </div>
-                        
-                        <div class="d-flex align-items-center mb-3">
                             <div class="bg-success bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center me-3" 
                                  style="width: 50px; height: 50px;">
                                 <i class="fas fa-phone text-success"></i>
                             </div>
                             <div>
                                 <h6 class="mb-1">電話</h6>
-                                <p class="text-muted mb-0">02-1234-5678</p>
+                                <p class="text-muted mb-0">0922-013-171</p>
                             </div>
                         </div>
                         
@@ -129,7 +118,7 @@
                             </div>
                             <div>
                                 <h6 class="mb-1">電子郵件</h6>
-                                <p class="text-muted mb-0">info@aitracks.com</p>
+                                <p class="text-muted mb-0">renfu.her@gmail.com</p>
                             </div>
                         </div>
                         
@@ -171,29 +160,7 @@
     </div>
 </section>
 
-<!-- Map Section -->
-<section class="py-5 bg-light">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 text-center mb-4">
-                <h3 class="fw-bold">我們的位置</h3>
-                <p class="text-muted">歡迎您親自來訪</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <div class="card border-0 shadow-sm">
-                    <div class="card-body p-0">
-                        <div class="ratio ratio-21x9">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.7!2d121.5654!3d25.0330!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442abb6da9c9e1f%3A0x1206bcf082fd10a6!2z5Y-w5YyX5biC5L-h576p5Y2A5L-h576p6Lev5LqU5q2N6KGX!5e0!3m2!1szh-TW!2stw!4v1234567890" 
-                                    style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+
 @endsection
 
 @push('scripts')
