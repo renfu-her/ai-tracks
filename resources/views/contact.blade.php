@@ -140,16 +140,16 @@
                     <div class="card-body p-4">
                         <h4 class="fw-bold mb-4">關注我們</h4>
                         <div class="d-flex gap-3">
-                            <a href="#" class="btn btn-outline-primary rounded-circle" style="width: 50px; height: 50px;">
+                            <a href="#" class="btn btn-outline-primary rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
-                            <a href="#" class="btn btn-outline-info rounded-circle" style="width: 50px; height: 50px;">
+                            <a href="#" class="btn btn-outline-info rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
                                 <i class="fab fa-twitter"></i>
                             </a>
-                            <a href="#" class="btn btn-outline-danger rounded-circle" style="width: 50px; height: 50px;">
+                            <a href="#" class="btn btn-outline-danger rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
                                 <i class="fab fa-instagram"></i>
                             </a>
-                            <a href="#" class="btn btn-outline-dark rounded-circle" style="width: 50px; height: 50px;">
+                            <a href="#" class="btn btn-outline-dark rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
                         </div>
