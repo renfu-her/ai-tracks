@@ -127,6 +127,7 @@
 @endsection
 
 @push('scripts')
+<script src="https://cdn.jsdelivr.net/npm/markdown@0.5.0/lib/markdown.min.js"></script>
 <script>
 $(document).ready(function() {
     // Sort functionality
@@ -161,32 +162,11 @@ function showCaseDetails(caseId) {
             photosHtml += '</div>';
         }
         
-        // Convert markdown to HTML
+        // Convert markdown to HTML using markdown-js
         let contentHtml = '';
         if (data.content) {
-            // Simple markdown to HTML conversion
-            contentHtml = data.content
-                .replace(/^### (.*$)/gim, '<h3>$1</h3>')
-                .replace(/^## (.*$)/gim, '<h2>$1</h2>')
-                .replace(/^# (.*$)/gim, '<h1>$1</h1>')
-                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-                .replace(/\*(.*?)\*/g, '<em>$1</em>')
-                .replace(/`(.*?)`/g, '<code>$1</code>')
-                .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank">$1</a>')
-                .replace(/^---$/gm, '<hr>')
-                .replace(/\n/g, '<br>');
-            
-            // Convert tables
-            contentHtml = contentHtml.replace(/\|(.+)\|/g, function(match, row) {
-                const cells = row.split('|').map(cell => cell.trim());
-                const cellHtml = cells.map(cell => `<td>${cell}</td>`).join('');
-                return `<tr>${cellHtml}</tr>`;
-            });
-            
-            // Wrap consecutive table rows in table tags
-            contentHtml = contentHtml.replace(/(<tr>.*?<\/tr>)+/g, function(match) {
-                return `<table class="table table-bordered table-striped">${match}</table>`;
-            });
+            // Use markdown-js library to convert markdown to HTML
+            contentHtml = markdown.toHTML(data.content);
         }
         
         $('#caseModalTitle').text(data.name);
@@ -255,6 +235,27 @@ function showCaseDetails(caseId) {
     color: #333;
 }
 
+.markdown-content h4 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.markdown-content h5 {
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.markdown-content h6 {
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
 .markdown-content strong {
     font-weight: bold;
     color: #333;
@@ -274,6 +275,20 @@ function showCaseDetails(caseId) {
     color: #e83e8c;
 }
 
+.markdown-content pre {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 0.25rem;
+    overflow-x: auto;
+    margin-bottom: 1rem;
+}
+
+.markdown-content pre code {
+    background: none;
+    padding: 0;
+    color: #333;
+}
+
 .markdown-content a {
     color: #007bff;
     text-decoration: none;
@@ -289,10 +304,16 @@ function showCaseDetails(caseId) {
     border-collapse: collapse;
 }
 
+.markdown-content table th,
 .markdown-content table td {
     padding: 0.5rem;
     border: 1px solid #dee2e6;
     vertical-align: top;
+}
+
+.markdown-content table th {
+    background-color: #f8f9fa;
+    font-weight: bold;
 }
 
 .markdown-content table tr:nth-child(even) {
@@ -303,6 +324,29 @@ function showCaseDetails(caseId) {
     border: none;
     border-top: 2px solid #dee2e6;
     margin: 1.5rem 0;
+}
+
+.markdown-content blockquote {
+    border-left: 4px solid #007bff;
+    padding-left: 1rem;
+    margin: 1rem 0;
+    color: #666;
+    font-style: italic;
+}
+
+.markdown-content ul,
+.markdown-content ol {
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+}
+
+.markdown-content li {
+    margin-bottom: 0.25rem;
+}
+
+.markdown-content p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
 }
 </style>
 @endpush 
