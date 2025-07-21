@@ -62,11 +62,6 @@
                     <div class="card-body d-flex flex-column">
                         <div class="d-flex justify-content-between align-items-start mb-2">
                             <small class="text-muted">{{ $item->published_at->format('Y-m-d') }}</small>
-                            @if($item->is_active)
-                            <span class="badge bg-success">已發布</span>
-                            @else
-                            <span class="badge bg-secondary">草稿</span>
-                            @endif
                         </div>
                         
                         <h5 class="card-title fw-bold mb-3">{{ $item->title }}</h5>
