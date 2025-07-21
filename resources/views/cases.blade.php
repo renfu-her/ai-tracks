@@ -34,7 +34,7 @@
                         <span class="text-muted me-3">共 {{ $cases->total() }} 個案例</span>
                     </div>
                     <div class="mb-3">
-                        <select class="form-select" id="sortSelect">
+                        <select class="form-select" id="sortSelect" style="min-width: 150px;">
                             <option value="latest">最新案例</option>
                             <option value="oldest">最舊案例</option>
                             <option value="name">按名稱排序</option>
