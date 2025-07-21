@@ -187,11 +187,6 @@
                             <div class="card-body">
                                 <div class="d-flex justify-content-between align-items-center mb-2">
                                     <small class="text-muted">{{ $news->published_at->format('Y-m-d') }}</small>
-                                    @if ($news->is_active)
-                                        <span class="badge bg-success">已發布</span>
-                                    @else
-                                        <span class="badge bg-secondary">草稿</span>
-                                    @endif
                                 </div>
                                 <h5 class="card-title fw-bold">{{ $news->title }}</h5>
                                 <p class="card-text text-muted">{{ Str::limit(strip_tags($news->content), 100) }}</p>

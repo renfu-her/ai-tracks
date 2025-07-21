@@ -158,9 +158,6 @@ function showNewsDetails(newsId) {
             <div class="mb-3">
                 <div class="d-flex justify-content-between align-items-center">
                     <small class="text-muted">發布日期：${new Date(data.published_at).toLocaleDateString('zh-TW')}</small>
-                    <span class="badge ${data.is_active ? 'bg-success' : 'bg-secondary'}">
-                        ${data.is_active ? '已發布' : '草稿'}
-                    </span>
                 </div>
             </div>
             <div class="mb-3">
