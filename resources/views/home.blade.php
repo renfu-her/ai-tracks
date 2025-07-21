@@ -118,6 +118,7 @@
                 @foreach ($featuredCases as $case)
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card h-100 shadow-sm border-0 hover-lift d-flex flex-column">
+                            <!-- 上方：圖片和標題區域 -->
                             <div class="flex-grow-1">
                                 <a href="{{ route('cases') }}" class="text-decoration-none">
                                     @if ($case->casePhotos->count() > 0)
@@ -139,13 +140,18 @@
                                 </a>
                             </div>
                             
-                            @if ($case->url)
-                                <div class="card-body pt-0">
+                            <!-- 下方：按鈕區域（固定高度） -->
+                            <div class="card-body pt-0" style="height: 60px; display: flex; align-items: center;">
+                                @if ($case->url)
                                     <a href="{{ $case->url }}" class="btn btn-outline-primary btn-sm" target="_blank">
                                         <i class="fas fa-external-link-alt me-1"></i>查看網站
                                     </a>
-                                </div>
-                            @endif
+                                @else
+                                    <button class="btn btn-outline-secondary btn-sm" disabled>
+                                        <i class="fas fa-external-link-alt me-1"></i>查看網站
+                                    </button>
+                                @endif
+                            </div>
                         </div>
                     </div>
                 @endforeach
