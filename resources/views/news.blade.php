@@ -62,9 +62,6 @@
                         </div>
                         
                         <h5 class="card-title fw-bold mb-3">{{ $item->title }}</h5>
-                        <p class="card-text text-muted flex-grow-1">
-                            {{ Str::limit(strip_tags($item->content), 120) }}
-                        </p>
                         
                         <div class="mt-auto">
                             <button class="btn btn-primary btn-sm w-100" 
@@ -108,6 +105,7 @@
 @endsection
 
 @push('scripts')
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.0/marked.min.js"></script>
 <script>
 $(document).ready(function() {
     // Filter functionality
@@ -139,6 +137,13 @@ function showNewsDetails(newsId) {
             `;
         }
         
+        // Convert markdown to HTML using marked
+        let contentHtml = '';
+        if (data.content) {
+            // Use marked library to convert markdown to HTML
+            contentHtml = marked.parse(data.content);
+        }
+        
         $('#newsModalTitle').text(data.title);
         $('#newsModalBody').html(`
             ${imageHtml}
@@ -153,8 +158,9 @@ function showNewsDetails(newsId) {
             <div class="mb-3">
                 <h4>${data.title}</h4>
             </div>
-            <div class="news-content">
-                ${data.content}
+            <div class="mb-3">
+                <strong>消息內容：</strong>
+                <div class="mt-2 markdown-content markdown-body">${contentHtml}</div>
             </div>
         `);
     }).fail(function() {
@@ -165,6 +171,7 @@ function showNewsDetails(newsId) {
 @endpush
 
 @push('styles')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.8.1/github-markdown.css">
 <style>
 .hover-lift {
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
@@ -175,15 +182,96 @@ function showNewsDetails(newsId) {
     box-shadow: 0 10px 25px rgba(0,0,0,0.1) !important;
 }
 
-.news-content {
-    line-height: 1.8;
+/* GitHub Markdown Content Styles */
+.markdown-content {
+    /* 使用 GitHub Markdown 樣式 */
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+    font-size: 16px;
+    line-height: 1.5;
+    word-wrap: break-word;
 }
 
-.news-content img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin: 1rem 0;
+/* 調整 GitHub Markdown 在 Modal 中的顯示 */
+.markdown-content.markdown-body {
+    background-color: transparent;
+    color: inherit;
+}
+
+/* 修正表格文字顏色，確保在 Modal 中清楚可見 */
+.markdown-content.markdown-body table {
+    color: #333 !important;
+}
+
+.markdown-content.markdown-body table th {
+    color: #333 !important;
+    background-color: #f6f8fa !important;
+    border-color: #d1d9e0 !important;
+}
+
+.markdown-content.markdown-body table td {
+    color: #333 !important;
+    border-color: #d1d9e0 !important;
+}
+
+.markdown-content.markdown-body table tr:nth-child(even) {
+    background-color: #f6f8fa !important;
+}
+
+.markdown-content.markdown-body table tr:nth-child(odd) {
+    background-color: #ffffff !important;
+}
+
+/* 確保所有文字在 Modal 中清楚可見 */
+.markdown-content.markdown-body h1,
+.markdown-content.markdown-body h2,
+.markdown-content.markdown-body h3,
+.markdown-content.markdown-body h4,
+.markdown-content.markdown-body h5,
+.markdown-content.markdown-body h6,
+.markdown-content.markdown-body p,
+.markdown-content.markdown-body li,
+.markdown-content.markdown-body strong,
+.markdown-content.markdown-body em,
+.markdown-content.markdown-body code,
+.markdown-content.markdown-body blockquote {
+    color: #333 !important;
+}
+
+.markdown-content.markdown-body a {
+    color: #0969da !important;
+}
+
+.markdown-content.markdown-body a:hover {
+    color: #1a7f37 !important;
+}
+
+/* 修正程式碼區塊的文字顏色 */
+.markdown-content.markdown-body pre {
+    background-color: #f6f8fa !important;
+    color: #333 !important;
+    border: 1px solid #d1d9e0 !important;
+}
+
+.markdown-content.markdown-body pre code {
+    background-color: transparent !important;
+    color: #333 !important;
+    padding: 0 !important;
+}
+
+.markdown-content.markdown-body code {
+    background-color: #f6f8fa !important;
+    color: #e36209 !important;
+    border: 1px solid #d1d9e0 !important;
+}
+
+/* 修正語法高亮區塊的文字顏色 */
+.markdown-content.markdown-body .highlight {
+    background-color: #f6f8fa !important;
+}
+
+.markdown-content.markdown-body .highlight pre {
+    background-color: #f6f8fa !important;
+    color: #333 !important;
 }
 </style>
 @endpush 
