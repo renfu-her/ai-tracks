@@ -54,26 +54,12 @@
                         <img src="{{ Storage::url($case->casePhotos->first()->image) }}" 
                              class="card-img-top" alt="{{ $case->name }}" 
                              style="height: 250px; object-fit: cover;">
-                        <div class="position-absolute top-0 end-0 m-2">
-                            @if($case->status)
-                            <span class="badge bg-success">已啟用</span>
-                            @else
-                            <span class="badge bg-secondary">已停用</span>
-                            @endif
-                        </div>
                     </div>
                     @else
                     <div class="position-relative">
                         <img src="https://via.placeholder.com/400x250/f8f9fa/6c757d?text=No+Image" 
                              class="card-img-top" alt="No Image" 
                              style="height: 250px; object-fit: cover;">
-                        <div class="position-absolute top-0 end-0 m-2">
-                            @if($case->status)
-                            <span class="badge bg-success">已啟用</span>
-                            @else
-                            <span class="badge bg-secondary">已停用</span>
-                            @endif
-                        </div>
                     </div>
                     @endif
                     
