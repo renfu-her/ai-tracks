@@ -20,7 +20,7 @@ class FrontendController extends Controller
             ->get();
 
         $latestNews = News::where('is_active', true)
-            ->latest('published_at')
+            ->latest('created_at')
             ->take(3)
             ->get();
 
