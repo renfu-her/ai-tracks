@@ -138,7 +138,7 @@
                             </div>
                             
                             <!-- 下方：按鈕區域（固定高度） -->
-                            <div class="card-body pt-0" style="height: 60px; display: flex; align-items: center;">
+                            <div class="card-body pt-0" style="height: 60px; display: flex; align-items: flex-end; padding-bottom: 0;">
                                 @if ($case->url)
                                     <a href="{{ $case->url }}" class="btn btn-outline-primary btn-sm" target="_blank">
                                         <i class="fas fa-external-link-alt me-1"></i>查看網站
