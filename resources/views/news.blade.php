@@ -26,7 +26,7 @@
                         <span class="text-muted me-3">共 {{ $news->total() }} 則消息</span>
                     </div>
                     <div class="mb-3">
-                        <select class="form-select" id="filterSelect">
+                        <select class="form-select" id="filterSelect" style="min-width: 150px;">
                             <option value="all">全部消息</option>
                             <option value="active">已發布</option>
                             <option value="draft">草稿</option>
