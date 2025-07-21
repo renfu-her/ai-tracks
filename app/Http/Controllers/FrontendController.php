@@ -65,7 +65,7 @@ class FrontendController extends Controller
     {
         $query = News::where('is_active', true);
 
-        $news = $query->latest('published_at')->paginate(9);
+        $news = $query->latest('created_at')->paginate(9);
 
         return view('news', compact('news'));
     }
