@@ -133,9 +133,6 @@
 
                                     <div class="card-body">
                                         <h5 class="card-title fw-bold mb-2 text-dark">{{ $case->name }}</h5>
-                                        @if ($case->sub_name)
-                                            <h6 class="card-subtitle text-muted mb-3">{{ $case->sub_name }}</h6>
-                                        @endif
                                     </div>
                                 </a>
                             </div>
