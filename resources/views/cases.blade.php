@@ -1,6 +1,14 @@
 @extends('layouts.app')
 
 @section('title', '案例展示 - AI Tracks')
+@section('description', '探索 AI Tracks 的成功案例，包含程式開發、UI/UX 設計、網站建置等專業技術解決方案。了解我們如何運用 AI 技術為客戶創造價值。')
+@section('keywords', '案例展示, 程式開發案例, UI/UX 設計案例, 網站開發案例, AI 技術案例, Laravel 案例')
+@section('og_title', '案例展示 - AI Tracks')
+@section('og_description', '探索 AI Tracks 的成功案例，包含程式開發、UI/UX 設計、網站建置等專業技術解決方案。')
+@section('og_image', asset('images/ai-tracks-cases.jpg'))
+@section('twitter_title', '案例展示 - AI Tracks')
+@section('twitter_description', '探索 AI Tracks 的成功案例，包含程式開發、UI/UX 設計、網站建置等專業技術解決方案。')
+@section('twitter_image', asset('images/ai-tracks-cases.jpg'))
 
 @section('content')
 <!-- Page Header -->

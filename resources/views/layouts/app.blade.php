@@ -4,6 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'AI Tracks - 專業案例展示')</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="@yield('description', 'AI Tracks 提供專業的 AI 技術解決方案，專注於程式開發、UI/UX 設計與數位轉型服務。')">
+    <meta name="keywords" content="@yield('keywords', 'AI 技術, 程式開發, UI/UX 設計, 數位轉型, Laravel, 網站開發')">
+    <meta name="author" content="AI Tracks">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="@yield('og_title', 'AI Tracks - 專業案例展示')">
+    <meta property="og:description" content="@yield('og_description', 'AI Tracks 提供專業的 AI 技術解決方案，專注於程式開發、UI/UX 設計與數位轉型服務。')">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ request()->url() }}">
+    <meta property="og:image" content="@yield('og_image', asset('images/ai-tracks-og.jpg'))">
+    <meta property="og:site_name" content="AI Tracks">
+    <meta property="og:locale" content="zh_TW">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="@yield('twitter_title', 'AI Tracks - 專業案例展示')">
+    <meta name="twitter:description" content="@yield('twitter_description', 'AI Tracks 提供專業的 AI 技術解決方案，專注於程式開發、UI/UX 設計與數位轉型服務。')">
+    <meta name="twitter:image" content="@yield('twitter_image', asset('images/ai-tracks-og.jpg'))">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="{{ request()->url() }}">
+    
+    <!-- Additional SEO -->
+    <meta name="theme-color" content="#007bff">
+    <meta name="msapplication-TileColor" content="#007bff">
 
     <link rel="icon" href="{{ asset('images/ai-tracks.png') }}" type="image/x-icon">
     

@@ -1,2 +1,11 @@
 User-agent: *
-Disallow:
+Allow: /
+
+# Sitemap
+Sitemap: https://ai-tracks.com/sitemap.xml
+
+# Disallow admin areas
+Disallow: /admin/
+Disallow: /filament/
+Disallow: /storage/
+Disallow: /vendor/
