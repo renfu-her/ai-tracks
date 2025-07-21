@@ -70,7 +70,7 @@ $(document).ready(function() {
     }
 
     // Back to top button
-    var $backToTop = $('<button class="btn btn-primary rounded-circle position-fixed" style="bottom: 20px; right: 20px; width: 50px; height: 50px; z-index: 1000; display: none;"><i class="fas fa-arrow-up"></i></button>');
+    var $backToTop = $('<button class="btn btn-primary rounded-circle position-fixed" style="bottom: 20px; right: 20px; width: 50px; height: 50px; z-index: 1000; display: none; display: flex; align-items: center; justify-content: center;"><i class="fas fa-chevron-up" style="font-size: 18px; line-height: 1;"></i></button>');
     $('body').append($backToTop);
 
     $(window).on('scroll', function() {
