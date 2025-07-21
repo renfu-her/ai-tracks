@@ -34,8 +34,9 @@ class NewsResource extends Resource
                 Forms\Components\TextInput::make('title')
                     ->label('標題')
                     ->required(),
-                \Mohamedsabil83\FilamentFormsTinyeditor\Components\TinyEditor::make('content')
+                Forms\Components\MarkdownEditor::make('content')
                     ->label('內容')
+                    ->columnSpanFull()
                     ->required(),
                 Forms\Components\FileUpload::make('image')
                     ->label('圖片')
