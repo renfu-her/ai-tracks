@@ -5,10 +5,10 @@
 @section('keywords', '聯絡我們, AI 技術諮詢, 程式開發服務, UI/UX 設計服務, 數位轉型諮詢, 專案合作')
 @section('og_title', '聯絡我們 - AI Tracks')
 @section('og_description', '聯絡 AI Tracks 專業團隊，獲取 AI 技術諮詢、程式開發服務、UI/UX 設計與數位轉型解決方案。')
-@section('og_image', asset('images/ai-tracks-contact.jpg'))
+@section('og_image', asset('images/ai-tracks-contact.png'))
 @section('twitter_title', '聯絡我們 - AI Tracks')
 @section('twitter_description', '聯絡 AI Tracks 專業團隊，獲取 AI 技術諮詢、程式開發服務、UI/UX 設計與數位轉型解決方案。')
-@section('twitter_image', asset('images/ai-tracks-contact.jpg'))
+@section('twitter_image', asset('images/ai-tracks-contact.png'))
 
 @section('content')
 <!-- Page Header -->

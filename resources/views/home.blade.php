@@ -5,10 +5,10 @@
 @section('keywords', 'AI 技術, 程式開發, UI/UX 設計, 數位轉型, Laravel, 網站開發, 人工智慧, 軟體開發')
 @section('og_title', 'AI Tracks - 專業案例展示')
 @section('og_description', 'AI Tracks 提供專業的 AI 技術解決方案，專注於程式開發、UI/UX 設計與數位轉型服務。')
-@section('og_image', asset('images/ai-tracks-home.jpg'))
+@section('og_image', asset('images/ai-tracks-home.png'))
 @section('twitter_title', 'AI Tracks - 專業案例展示')
 @section('twitter_description', 'AI Tracks 提供專業的 AI 技術解決方案，專注於程式開發、UI/UX 設計與數位轉型服務。')
-@section('twitter_image', asset('images/ai-tracks-home.jpg'))
+@section('twitter_image', asset('images/ai-tracks-home.png'))
 
 @section('content')
     <!-- Hero Slider Section -->

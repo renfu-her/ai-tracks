@@ -5,10 +5,10 @@
 @section('keywords', '最新消息, AI 技術趨勢, 程式開發新聞, UI/UX 設計趨勢, 數位轉型資訊, 技術動態')
 @section('og_title', '最新消息 - AI Tracks')
 @section('og_description', '掌握 AI Tracks 的最新動態與 AI 技術趨勢。了解最新的程式開發技術、UI/UX 設計趨勢與數位轉型資訊。')
-@section('og_image', asset('images/ai-tracks-news.jpg'))
+@section('og_image', asset('images/ai-tracks-news.png'))
 @section('twitter_title', '最新消息 - AI Tracks')
 @section('twitter_description', '掌握 AI Tracks 的最新動態與 AI 技術趨勢。了解最新的程式開發技術、UI/UX 設計趨勢與數位轉型資訊。')
-@section('twitter_image', asset('images/ai-tracks-news.jpg'))
+@section('twitter_image', asset('images/ai-tracks-news.png'))
 
 @section('content')
 <!-- Page Header -->
