@@ -117,8 +117,8 @@
             <div class="row">
                 @foreach ($featuredCases as $case)
                     <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100 shadow-sm border-0 hover-lift">
-                            <a href="{{ route('cases') }}" class="text-decoration-none">
+                        <div class="card h-100 shadow-sm border-0 hover-lift d-flex flex-column">
+                            <a href="{{ route('cases') }}" class="text-decoration-none flex-grow-1">
                                 @if ($case->casePhotos->count() > 0)
                                     <img src="{{ Storage::url($case->casePhotos->first()->image) }}" class="card-img-top"
                                         alt="{{ $case->name }}" style="height: 200px; object-fit: cover;">
@@ -138,7 +138,7 @@
                             </a>
                             
                             @if ($case->url)
-                                <div class="card-body pt-0">
+                                <div class="card-body pt-0 mt-auto">
                                     <a href="{{ $case->url }}" class="btn btn-outline-primary btn-sm" target="_blank">
                                         <i class="fas fa-external-link-alt me-1"></i>查看網站
                                     </a>
