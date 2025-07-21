@@ -78,41 +78,41 @@
                 @endif
             </div>
         @else
-                <!-- Fallback Hero Section -->
-    <section class="hero-section bg-gradient-primary text-white py-5">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h1 class="display-4 fw-bold mb-4">AI 助力程式開發與 UI/UX 設計</h1>
-                    <p class="lead mb-4">
-                        結合 AI 智能與設計美學，打造高效且直覺的開發體驗，提升效率與創意品質。
-                    </p>
-                    <a href="{{ route('cases') }}" class="btn btn-light btn-lg me-3">
-                        <i class="fas fa-eye me-2"></i>查看案例
-                    </a>
-                    <a href="{{ route('contact') }}" class="btn btn-outline-light btn-lg">
-                        <i class="fas fa-phone me-2"></i>聯絡我們
-                    </a>
+            <!-- Fallback Hero Section -->
+            <section class="hero-section bg-gradient-primary text-white py-5">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <h1 class="display-4 fw-bold mb-4">AI 助力程式開發與 UI/UX 設計</h1>
+                            <p class="lead mb-4">
+                                結合 AI 智能與設計美學，打造高效且直覺的開發體驗，提升效率與創意品質。
+                            </p>
+                            <a href="{{ route('cases') }}" class="btn btn-light btn-lg me-3">
+                                <i class="fas fa-eye me-2"></i>查看案例
+                            </a>
+                            <a href="{{ route('contact') }}" class="btn btn-outline-light btn-lg">
+                                <i class="fas fa-phone me-2"></i>聯絡我們
+                            </a>
+                        </div>
+                        <div class="col-lg-6">
+                            <img src="https://via.placeholder.com/600x400/007bff/ffffff?text=AI+Development+Design"
+                                alt="AI Development & Design" class="img-fluid rounded shadow">
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-6">
-                    <img src="https://via.placeholder.com/600x400/007bff/ffffff?text=AI+Development+Design" 
-                         alt="AI Development & Design" class="img-fluid rounded shadow">
-                </div>
-            </div>
-        </div>
-    </section>
+            </section>
         @endif
     </section>
 
     <!-- Featured Cases Section -->
     <section class="py-5">
         <div class="container">
-                    <div class="row mb-4">
-            <div class="col-12 text-center">
-                <h2 class="fw-bold mb-3">精選案例</h2>
-                <p class="text-muted">探索我們最新的 AI 開發與設計案例</p>
+            <div class="row mb-4">
+                <div class="col-12 text-center">
+                    <h2 class="fw-bold mb-3">精選案例</h2>
+                    <p class="text-muted">探索我們最新的 AI 開發與設計案例</p>
+                </div>
             </div>
-        </div>
 
             <div class="row">
                 @foreach ($featuredCases as $case)
@@ -122,8 +122,9 @@
                             <div class="flex-grow-1">
                                 <a href="{{ route('cases') }}" class="text-decoration-none">
                                     @if ($case->casePhotos->count() > 0)
-                                        <img src="{{ Storage::url($case->casePhotos->first()->image) }}" class="card-img-top"
-                                            alt="{{ $case->name }}" style="height: 200px; object-fit: cover;">
+                                        <img src="{{ Storage::url($case->casePhotos->first()->image) }}"
+                                            class="card-img-top" alt="{{ $case->name }}"
+                                            style="height: 200px; object-fit: cover;">
                                     @else
                                         <div class="d-flex align-items-center justify-content-center bg-light"
                                             style="height: 200px;">
@@ -136,9 +137,10 @@
                                     </div>
                                 </a>
                             </div>
-                            
+
                             <!-- 下方：按鈕區域（固定高度） -->
-                            <div class="card-body pt-0" style="height: 60px; display: flex; align-items: flex-end; padding-bottom: 10px;">
+                            <div class="card-body pt-0"
+                                style="height: 60px; display: flex; align-items: flex-end; padding-bottom: 10px;">
                                 @if ($case->url)
                                     <a href="{{ $case->url }}" class="btn btn-outline-primary btn-sm" target="_blank">
                                         <i class="fas fa-external-link-alt me-1"></i>查看網站
@@ -165,33 +167,34 @@
     <!-- Latest News Section -->
     <section class="bg-light py-5">
         <div class="container">
-                    <div class="row mb-4">
-            <div class="col-12 text-center">
-                <h2 class="fw-bold mb-3">最新消息</h2>
-                <p class="text-muted">掌握最新的 AI 開發與設計趨勢</p>
+            <div class="row mb-4">
+                <div class="col-12 text-center">
+                    <h2 class="fw-bold mb-3">最新消息</h2>
+                    <p class="text-muted">掌握最新的 AI 開發與設計趨勢</p>
+                </div>
             </div>
-        </div>
 
             <div class="row">
                 @foreach ($latestNews as $news)
                     <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100 border-0 shadow-sm">
-                            @if ($news->image)
-                                <img src="{{ Storage::url($news->image) }}" class="card-img-top"
-                                    alt="{{ $news->title }}" style="height: 200px; object-fit: cover;">
-                            @else
-                                <img src="https://via.placeholder.com/400x200/f8f9fa/6c757d?text=News"
-                                    class="card-img-top" alt="News" style="height: 200px; object-fit: cover;">
-                            @endif
+                        <a href="{{ route('news') }}" class="text-decoration-none">
+                            <div class="card h-100 border-0 shadow-sm">
+                                @if ($news->image)
+                                    <img src="{{ Storage::url($news->image) }}" class="card-img-top"
+                                        alt="{{ $news->title }}" style="height: 200px; object-fit: cover;">
+                                @else
+                                    <img src="https://via.placeholder.com/400x200/f8f9fa/6c757d?text=News"
+                                        class="card-img-top" alt="News" style="height: 200px; object-fit: cover;">
+                                @endif
 
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between align-items-center mb-2">
-                                    <small class="text-muted">{{ $news->published_at->format('Y-m-d') }}</small>
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <small class="text-muted">{{ $news->published_at->format('Y-m-d') }}</small>
+                                    </div>
+                                    <h5 class="card-title fw-bold">{{ $news->title }}</h5>
                                 </div>
-                                <h5 class="card-title fw-bold">{{ $news->title }}</h5>
-                                <p class="card-text text-muted">{{ Str::limit(strip_tags($news->content), 100) }}</p>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 @endforeach
             </div>
@@ -207,46 +210,46 @@
     <!-- Services Section -->
     <section class="py-5">
         <div class="container">
-                    <div class="row mb-4">
-            <div class="col-12 text-center">
-                <h2 class="fw-bold mb-3">我們的服務</h2>
-                <p class="text-muted">專業的 AI 開發與設計解決方案</p>
+            <div class="row mb-4">
+                <div class="col-12 text-center">
+                    <h2 class="fw-bold mb-3">我們的服務</h2>
+                    <p class="text-muted">專業的 AI 開發與設計解決方案</p>
+                </div>
             </div>
-        </div>
 
             <div class="row">
-                            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="text-center">
-                    <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
-                         style="width: 80px; height: 80px;">
-                        <i class="fas fa-code fa-2x text-primary"></i>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="text-center">
+                        <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                            style="width: 80px; height: 80px;">
+                            <i class="fas fa-code fa-2x text-primary"></i>
+                        </div>
+                        <h5 class="fw-bold">AI 程式開發</h5>
+                        <p class="text-muted">結合 AI 技術的智能程式開發，提升開發效率與程式碼品質。</p>
                     </div>
-                    <h5 class="fw-bold">AI 程式開發</h5>
-                    <p class="text-muted">結合 AI 技術的智能程式開發，提升開發效率與程式碼品質。</p>
                 </div>
-            </div>
-            
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="text-center">
-                    <div class="bg-success bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
-                         style="width: 80px; height: 80px;">
-                        <i class="fas fa-palette fa-2x text-success"></i>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="text-center">
+                        <div class="bg-success bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                            style="width: 80px; height: 80px;">
+                            <i class="fas fa-palette fa-2x text-success"></i>
+                        </div>
+                        <h5 class="fw-bold">UI/UX 設計</h5>
+                        <p class="text-muted">AI 輔助的直覺化設計，創造美觀且易用的使用者體驗。</p>
                     </div>
-                    <h5 class="fw-bold">UI/UX 設計</h5>
-                    <p class="text-muted">AI 輔助的直覺化設計，創造美觀且易用的使用者體驗。</p>
                 </div>
-            </div>
-            
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="text-center">
-                    <div class="bg-warning bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
-                         style="width: 80px; height: 80px;">
-                        <i class="fas fa-lightbulb fa-2x text-warning"></i>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="text-center">
+                        <div class="bg-warning bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                            style="width: 80px; height: 80px;">
+                            <i class="fas fa-lightbulb fa-2x text-warning"></i>
+                        </div>
+                        <h5 class="fw-bold">創意優化</h5>
+                        <p class="text-muted">AI 驅動的創意發想與設計優化，激發無限創意可能。</p>
                     </div>
-                    <h5 class="fw-bold">創意優化</h5>
-                    <p class="text-muted">AI 驅動的創意發想與設計優化，激發無限創意可能。</p>
                 </div>
-            </div>
             </div>
         </div>
     </section>
