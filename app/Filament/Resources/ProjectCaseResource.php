@@ -13,7 +13,6 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
-use Filament\Forms\Components\MarkdownEditor;
 use App\Filament\Resources\ProjectCaseResource\RelationManagers\CasePhotosRelationManager;
 
 class ProjectCaseResource extends Resource
@@ -48,11 +47,11 @@ class ProjectCaseResource extends Resource
                             ->url()
                             ->maxLength(255),
 
-                        MarkdownEditor::make('content')
+                        Forms\Components\MarkdownEditor::make('content')
                             ->label('內容')
-                            ->minHeight(450)
-                            ->columnSpanFull(),
-                            
+                            ->columnSpanFull()
+                            ->required(),
+
                         Forms\Components\Toggle::make('status')
                             ->label('狀態')
                             ->default(true),
@@ -77,7 +76,7 @@ class ProjectCaseResource extends Resource
 
                 Tables\Columns\TextColumn::make('url')
                     ->label('網址')
-                    ->url(fn ($record) => $record->url)
+                    ->url(fn($record) => $record->url)
                     ->openUrlInNewTab()
                     ->searchable()
                     ->sortable(),
@@ -123,4 +122,4 @@ class ProjectCaseResource extends Resource
             'edit' => Pages\EditProjectCase::route('/{record}/edit'),
         ];
     }
-} 
+}
