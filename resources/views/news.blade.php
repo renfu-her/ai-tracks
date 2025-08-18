@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
-@section('title', '最新消息 - AI Tracks')
-@section('description', '掌握 AI Tracks 的最新動態與 AI 技術趨勢。了解最新的程式開發技術、UI/UX 設計趨勢與數位轉型資訊。')
-@section('keywords', '最新消息, AI 技術趨勢, 程式開發新聞, UI/UX 設計趨勢, 數位轉型資訊, 技術動態')
-@section('og_title', '最新消息 - AI Tracks')
-@section('og_description', '掌握 AI Tracks 的最新動態與 AI 技術趨勢。了解最新的程式開發技術、UI/UX 設計趨勢與數位轉型資訊。')
+@section('title', 'Latest News - AI Tracks')
+@section('description', 'Stay updated with AI Tracks latest developments and AI technology trends. Learn about the latest programming development technologies, UI/UX design trends and digital transformation information.')
+@section('keywords', 'latest news, AI technology trends, programming development news, UI/UX design trends, digital transformation information, technology updates')
+@section('og_title', 'Latest News - AI Tracks')
+@section('og_description', 'Stay updated with AI Tracks latest developments and AI technology trends. Learn about the latest programming development technologies, UI/UX design trends and digital transformation information.')
 @section('og_image', asset('images/ai-tracks-news.png'))
-@section('twitter_title', '最新消息 - AI Tracks')
-@section('twitter_description', '掌握 AI Tracks 的最新動態與 AI 技術趨勢。了解最新的程式開發技術、UI/UX 設計趨勢與數位轉型資訊。')
+@section('twitter_title', 'Latest News - AI Tracks')
+@section('twitter_description', 'Stay updated with AI Tracks latest developments and AI technology trends. Learn about the latest programming development technologies, UI/UX design trends and digital transformation information.')
 @section('twitter_image', asset('images/ai-tracks-news.png'))
 
 @section('content')
@@ -16,8 +16,8 @@
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
-                <h1 class="display-5 fw-bold mb-3">最新消息</h1>
-                <p class="lead">掌握最新的 AI 技術趨勢與公司動態</p>
+                <h1 class="display-5 fw-bold mb-3">Latest News</h1>
+                <p class="lead">Stay updated with the latest AI technology trends and company updates</p>
             </div>
         </div>
     </div>
@@ -31,13 +31,13 @@
             <div class="col-12">
                 <div class="d-flex justify-content-between align-items-center flex-wrap">
                     <div class="mb-3">
-                        <span class="text-muted me-3">共 {{ $news->total() }} 則消息</span>
+                        <span class="text-muted me-3">Total {{ $news->total() }} news items</span>
                     </div>
                     <div class="mb-3">
                         <select class="form-select" id="filterSelect" style="min-width: 150px;">
-                            <option value="all">全部消息</option>
-                            <option value="active">已發布</option>
-                            <option value="draft">草稿</option>
+                            <option value="all">All News</option>
+                            <option value="active">Published</option>
+                            <option value="draft">Draft</option>
                         </select>
                     </div>
                 </div>
@@ -69,7 +69,7 @@
                         <div class="mt-auto">
                             <button class="btn btn-primary btn-sm w-100" 
                                     onclick="showNewsDetails({{ $item->id }})">
-                                <i class="fas fa-eye me-1"></i>閱讀全文
+                                <i class="fas fa-eye me-1"></i>Read Full Article
                             </button>
                         </div>
                     </div>
@@ -82,7 +82,7 @@
         @if($news->hasPages())
         <div class="row">
             <div class="col-12">
-                <nav aria-label="消息分頁">
+                <nav aria-label="News pagination">
                     {{ $news->links() }}
                 </nav>
             </div>
@@ -96,7 +96,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="newsModalTitle">消息詳細內容</h5>
+                <h5 class="modal-title" id="newsModalTitle">News Details</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
             <div class="modal-body" id="newsModalBody">
@@ -152,19 +152,19 @@ function showNewsDetails(newsId) {
             ${imageHtml}
             <div class="mb-3">
                 <div class="d-flex justify-content-between align-items-center">
-                    <small class="text-muted">發布日期：${new Date(data.published_at).toLocaleDateString('zh-TW')}</small>
+                    <small class="text-muted">Published Date: ${new Date(data.published_at).toLocaleDateString('en-US')}</small>
                 </div>
             </div>
             <div class="mb-3">
                 <h4>${data.title}</h4>
             </div>
             <div class="mb-3">
-                <strong>消息內容：</strong>
+                <strong>News Content:</strong>
                 <div class="mt-2 markdown-content markdown-body">${contentHtml}</div>
             </div>
         `);
     }).fail(function() {
-        $('#newsModalBody').html('<div class="alert alert-danger">載入失敗，請稍後再試。</div>');
+        $('#newsModalBody').html('<div class="alert alert-danger">Loading failed, please try again later.</div>');
     });
 }
 </script>
@@ -184,20 +184,20 @@ function showNewsDetails(newsId) {
 
 /* GitHub Markdown Content Styles */
 .markdown-content {
-    /* 使用 GitHub Markdown 樣式 */
+    /* Use GitHub Markdown styles */
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
     font-size: 16px;
     line-height: 1.5;
     word-wrap: break-word;
 }
 
-/* 調整 GitHub Markdown 在 Modal 中的顯示 */
+/* Adjust GitHub Markdown display in Modal */
 .markdown-content.markdown-body {
     background-color: transparent;
     color: inherit;
 }
 
-/* 修正表格文字顏色，確保在 Modal 中清楚可見 */
+/* Fix table text color to ensure visibility in Modal */
 .markdown-content.markdown-body table {
     color: #333 !important;
 }
@@ -221,7 +221,7 @@ function showNewsDetails(newsId) {
     background-color: #ffffff !important;
 }
 
-/* 確保所有文字在 Modal 中清楚可見 */
+/* Ensure all text is clearly visible in Modal */
 .markdown-content.markdown-body h1,
 .markdown-content.markdown-body h2,
 .markdown-content.markdown-body h3,
@@ -245,7 +245,7 @@ function showNewsDetails(newsId) {
     color: #1a7f37 !important;
 }
 
-/* 修正程式碼區塊的文字顏色 */
+/* Fix code block text color */
 .markdown-content.markdown-body pre {
     background-color: #f6f8fa !important;
     color: #333 !important;
@@ -264,7 +264,7 @@ function showNewsDetails(newsId) {
     border: 1px solid #d1d9e0 !important;
 }
 
-/* 修正語法高亮區塊的文字顏色 */
+/* Fix syntax highlighting block text color */
 .markdown-content.markdown-body .highlight {
     background-color: #f6f8fa !important;
 }

@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
-@section('title', 'AI Tracks - 專業案例展示')
-@section('description', 'AI Tracks 提供專業的 AI 技術解決方案，專注於程式開發、UI/UX 設計與數位轉型服務。探索我們的成功案例與最新技術趨勢。')
-@section('keywords', 'AI 技術, 程式開發, UI/UX 設計, 數位轉型, Laravel, 網站開發, 人工智慧, 軟體開發')
-@section('og_title', 'AI Tracks - 專業案例展示')
-@section('og_description', 'AI Tracks 提供專業的 AI 技術解決方案，專注於程式開發、UI/UX 設計與數位轉型服務。')
+@section('title', 'AI Tracks - Professional Case Studies')
+@section('description', 'AI Tracks provides professional AI technology solutions, specializing in programming development, UI/UX design and digital transformation services. Explore our successful cases and latest technology trends.')
+@section('keywords', 'AI technology, programming development, UI/UX design, digital transformation, Laravel, web development, artificial intelligence, software development')
+@section('og_title', 'AI Tracks - Professional Case Studies')
+@section('og_description', 'AI Tracks provides professional AI technology solutions, specializing in programming development, UI/UX design and digital transformation services.')
 @section('og_image', asset('images/ai-tracks-home.png'))
-@section('twitter_title', 'AI Tracks - 專業案例展示')
-@section('twitter_description', 'AI Tracks 提供專業的 AI 技術解決方案，專注於程式開發、UI/UX 設計與數位轉型服務。')
+@section('twitter_title', 'AI Tracks - Professional Case Studies')
+@section('twitter_description', 'AI Tracks provides professional AI technology solutions, specializing in programming development, UI/UX design and digital transformation services.')
 @section('twitter_image', asset('images/ai-tracks-home.png'))
 
 @section('content')
@@ -40,17 +40,17 @@
                                                 @endif
                                                 <div class="hero-buttons">
                                                     <a href="{{ route('cases') }}" class="btn btn-light btn-lg me-3">
-                                                        <i class="fas fa-eye me-2"></i>查看案例
+                                                        <i class="fas fa-eye me-2"></i>View Cases
                                                     </a>
                                                     @if ($slider->link)
                                                         <a href="{{ $slider->link }}" class="btn btn-outline-light btn-lg"
                                                             target="_blank">
-                                                            <i class="fas fa-external-link-alt me-2"></i>了解更多
+                                                            <i class="fas fa-external-link-alt me-2"></i>Learn More
                                                         </a>
                                                     @else
                                                         <a href="{{ route('contact') }}"
                                                             class="btn btn-outline-light btn-lg">
-                                                            <i class="fas fa-phone me-2"></i>聯絡我們
+                                                            <i class="fas fa-phone me-2"></i>Contact Us
                                                         </a>
                                                     @endif
                                                 </div>
@@ -83,15 +83,15 @@
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-lg-6">
-                            <h1 class="display-4 fw-bold mb-4">AI 助力程式開發與 UI/UX 設計</h1>
+                            <h1 class="display-4 fw-bold mb-4">AI-Powered Programming Development & UI/UX Design</h1>
                             <p class="lead mb-4">
-                                結合 AI 智能與設計美學，打造高效且直覺的開發體驗，提升效率與創意品質。
+                                Combining AI intelligence with design aesthetics to create efficient and intuitive development experiences, enhancing productivity and creative quality.
                             </p>
                             <a href="{{ route('cases') }}" class="btn btn-light btn-lg me-3">
-                                <i class="fas fa-eye me-2"></i>查看案例
+                                <i class="fas fa-eye me-2"></i>View Cases
                             </a>
                             <a href="{{ route('contact') }}" class="btn btn-outline-light btn-lg">
-                                <i class="fas fa-phone me-2"></i>聯絡我們
+                                <i class="fas fa-phone me-2"></i>Contact Us
                             </a>
                         </div>
                         <div class="col-lg-6">
@@ -109,8 +109,8 @@
         <div class="container">
             <div class="row mb-4">
                 <div class="col-12 text-center">
-                    <h2 class="fw-bold mb-3">精選案例</h2>
-                    <p class="text-muted">探索我們最新的 AI 開發與設計案例</p>
+                    <h2 class="fw-bold mb-3">Featured Cases</h2>
+                    <p class="text-muted">Explore our latest AI development and design cases</p>
                 </div>
             </div>
 
@@ -118,7 +118,7 @@
                 @foreach ($featuredCases as $case)
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card h-100 shadow-sm border-0 hover-lift d-flex flex-column">
-                            <!-- 上方：圖片和標題區域 -->
+                            <!-- Top: Image and title area -->
                             <div class="flex-grow-1">
                                 <a href="{{ route('cases') }}" class="text-decoration-none">
                                     @if ($case->casePhotos->count() > 0)
@@ -128,7 +128,7 @@
                                     @else
                                         <div class="d-flex align-items-center justify-content-center bg-light"
                                             style="height: 200px;">
-                                            <span class="text-muted">無法載入圖片</span>
+                                            <span class="text-muted">Unable to load image</span>
                                         </div>
                                     @endif
 
@@ -138,16 +138,16 @@
                                 </a>
                             </div>
 
-                            <!-- 下方：按鈕區域（固定高度） -->
+                            <!-- Bottom: Button area (fixed height) -->
                             <div class="card-body pt-0"
                                 style="height: 60px; display: flex; align-items: flex-end; padding-bottom: 10px;">
                                 @if ($case->url)
                                     <a href="{{ $case->url }}" class="btn btn-outline-primary btn-sm" target="_blank">
-                                        <i class="fas fa-external-link-alt me-1"></i>查看網站
+                                        <i class="fas fa-external-link-alt me-1"></i>View Website
                                     </a>
                                 @else
                                     <button class="btn btn-outline-secondary btn-sm" disabled>
-                                        <i class="fas fa-external-link-alt me-1"></i>查看網站
+                                        <i class="fas fa-external-link-alt me-1"></i>View Website
                                     </button>
                                 @endif
                             </div>
@@ -158,7 +158,7 @@
 
             <div class="text-center mt-4">
                 <a href="{{ route('cases') }}" class="btn btn-primary btn-lg">
-                    查看更多案例 <i class="fas fa-arrow-right ms-2"></i>
+                    View More Cases <i class="fas fa-arrow-right ms-2"></i>
                 </a>
             </div>
         </div>
@@ -169,8 +169,8 @@
         <div class="container">
             <div class="row mb-4">
                 <div class="col-12 text-center">
-                    <h2 class="fw-bold mb-3">最新消息</h2>
-                    <p class="text-muted">掌握最新的 AI 開發與設計趨勢</p>
+                    <h2 class="fw-bold mb-3">Latest News</h2>
+                    <p class="text-muted">Stay updated with the latest AI development and design trends</p>
                 </div>
             </div>
 
@@ -201,7 +201,7 @@
 
             <div class="text-center mt-4">
                 <a href="{{ route('news') }}" class="btn btn-outline-primary btn-lg">
-                    查看更多消息 <i class="fas fa-arrow-right ms-2"></i>
+                    View More News <i class="fas fa-arrow-right ms-2"></i>
                 </a>
             </div>
         </div>
@@ -212,8 +212,8 @@
         <div class="container">
             <div class="row mb-4">
                 <div class="col-12 text-center">
-                    <h2 class="fw-bold mb-3">我們的服務</h2>
-                    <p class="text-muted">專業的 AI 開發與設計解決方案</p>
+                    <h2 class="fw-bold mb-3">Our Services</h2>
+                    <p class="text-muted">Professional AI development and design solutions</p>
                 </div>
             </div>
 
@@ -224,8 +224,8 @@
                             style="width: 80px; height: 80px;">
                             <i class="fas fa-code fa-2x text-primary"></i>
                         </div>
-                        <h5 class="fw-bold">AI 程式開發</h5>
-                        <p class="text-muted">結合 AI 技術的智能程式開發，提升開發效率與程式碼品質。</p>
+                        <h5 class="fw-bold">AI Programming Development</h5>
+                        <p class="text-muted">Intelligent programming development combining AI technology to enhance development efficiency and code quality.</p>
                     </div>
                 </div>
 
@@ -235,8 +235,8 @@
                             style="width: 80px; height: 80px;">
                             <i class="fas fa-palette fa-2x text-success"></i>
                         </div>
-                        <h5 class="fw-bold">UI/UX 設計</h5>
-                        <p class="text-muted">AI 輔助的直覺化設計，創造美觀且易用的使用者體驗。</p>
+                        <h5 class="fw-bold">UI/UX Design</h5>
+                        <p class="text-muted">AI-assisted intuitive design, creating beautiful and user-friendly experiences.</p>
                     </div>
                 </div>
 
@@ -246,8 +246,8 @@
                             style="width: 80px; height: 80px;">
                             <i class="fas fa-lightbulb fa-2x text-warning"></i>
                         </div>
-                        <h5 class="fw-bold">創意優化</h5>
-                        <p class="text-muted">AI 驅動的創意發想與設計優化，激發無限創意可能。</p>
+                        <h5 class="fw-bold">Creative Optimization</h5>
+                        <p class="text-muted">AI-driven creative ideation and design optimization, inspiring unlimited creative possibilities.</p>
                     </div>
                 </div>
             </div>

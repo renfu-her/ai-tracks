@@ -1,30 +1,30 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'AI Tracks - 專業案例展示')</title>
+    <title>@yield('title', 'AI Tracks - Professional Case Studies')</title>
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="@yield('description', 'AI Tracks 提供專業的 AI 技術解決方案，專注於程式開發、UI/UX 設計與數位轉型服務。')">
-    <meta name="keywords" content="@yield('keywords', 'AI 技術, 程式開發, UI/UX 設計, 數位轉型, Laravel, 網站開發')">
+    <meta name="description" content="@yield('description', 'AI Tracks provides professional AI technology solutions, specializing in programming development, UI/UX design and digital transformation services.')">
+    <meta name="keywords" content="@yield('keywords', 'AI technology, programming development, UI/UX design, digital transformation, Laravel, web development')">
     <meta name="author" content="AI Tracks">
     <meta name="robots" content="index, follow">
 
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="@yield('og_title', 'AI Tracks - 專業案例展示')">
-    <meta property="og:description" content="@yield('og_description', 'AI Tracks 提供專業的 AI 技術解決方案，專注於程式開發、UI/UX 設計與數位轉型服務。')">
+    <meta property="og:title" content="@yield('og_title', 'AI Tracks - Professional Case Studies')">
+    <meta property="og:description" content="@yield('og_description', 'AI Tracks provides professional AI technology solutions, specializing in programming development, UI/UX design and digital transformation services.')">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ request()->url() }}">
     <meta property="og:image" content="@yield('og_image', asset('images/ai-tracks-og.jpg'))">
     <meta property="og:site_name" content="AI Tracks">
-    <meta property="og:locale" content="zh_TW">
+    <meta property="og:locale" content="en_US">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="@yield('twitter_title', 'AI Tracks - 專業案例展示')">
-    <meta name="twitter:description" content="@yield('twitter_description', 'AI Tracks 提供專業的 AI 技術解決方案，專注於程式開發、UI/UX 設計與數位轉型服務。')">
+    <meta name="twitter:title" content="@yield('twitter_title', 'AI Tracks - Professional Case Studies')">
+    <meta name="twitter:description" content="@yield('twitter_description', 'AI Tracks provides professional AI technology solutions, specializing in programming development, UI/UX design and digital transformation services.')">
     <meta name="twitter:image" content="@yield('twitter_image', asset('images/ai-tracks-og.jpg'))">
 
     <!-- Canonical URL -->
@@ -75,16 +75,16 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('home') }}">首頁</a>
+                            <a class="nav-link" href="{{ route('home') }}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('cases') }}">案例展示</a>
+                            <a class="nav-link" href="{{ route('cases') }}">Case Studies</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('news') }}">最新消息</a>
+                            <a class="nav-link" href="{{ route('news') }}">News</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('contact') }}">聯絡我們</a>
+                            <a class="nav-link" href="{{ route('contact') }}">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -103,19 +103,19 @@
             <div class="row">
                 <div class="col-md-6">
                     <h5 class="mb-3">AI Tracks</h5>
-                    <p class="text-muted">專業的 AI 技術解決方案提供商，為您打造最佳的數位體驗。</p>
+                    <p class="text-muted">Professional AI technology solution provider, creating the best digital experience for you.</p>
                 </div>
                 <div class="col-md-3">
-                    <h6 class="mb-3">快速連結</h6>
+                    <h6 class="mb-3">Quick Links</h6>
                     <ul class="list-unstyled">
-                        <li><a href="{{ route('home') }}" class="text-muted text-decoration-none">首頁</a></li>
-                        <li><a href="{{ route('cases') }}" class="text-muted text-decoration-none">案例展示</a></li>
-                        <li><a href="{{ route('news') }}" class="text-muted text-decoration-none">最新消息</a></li>
-                        <li><a href="{{ route('contact') }}" class="text-muted text-decoration-none">聯絡我們</a></li>
+                        <li><a href="{{ route('home') }}" class="text-muted text-decoration-none">Home</a></li>
+                        <li><a href="{{ route('cases') }}" class="text-muted text-decoration-none">Case Studies</a></li>
+                        <li><a href="{{ route('news') }}" class="text-muted text-decoration-none">News</a></li>
+                        <li><a href="{{ route('contact') }}" class="text-muted text-decoration-none">Contact</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3">
-                    <h6 class="mb-3">聯絡資訊</h6>
+                    <h6 class="mb-3">Contact Information</h6>
                     <ul class="list-unstyled text-muted">
                         <li><i class="fas fa-phone me-2"></i>0922-013-171</li>
                         <li><i class="fas fa-envelope me-2"></i>renfu.her@gmail.com</li>
