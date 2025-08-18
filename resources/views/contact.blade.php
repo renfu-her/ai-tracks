@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
-@section('title', '聯絡我們 - AI Tracks')
-@section('description', '聯絡 AI Tracks 專業團隊，獲取 AI 技術諮詢、程式開發服務、UI/UX 設計與數位轉型解決方案。立即與我們聯繫，開始您的專案。')
-@section('keywords', '聯絡我們, AI 技術諮詢, 程式開發服務, UI/UX 設計服務, 數位轉型諮詢, 專案合作')
-@section('og_title', '聯絡我們 - AI Tracks')
-@section('og_description', '聯絡 AI Tracks 專業團隊，獲取 AI 技術諮詢、程式開發服務、UI/UX 設計與數位轉型解決方案。')
+@section('title', 'Contact Us - AI Tracks')
+@section('description', 'Contact AI Tracks professional team for AI technology consulting, programming development services, UI/UX design and digital transformation solutions. Contact us now to start your project.')
+@section('keywords', 'contact us, AI technology consulting, programming development services, UI/UX design services, digital transformation consulting, project collaboration')
+@section('og_title', 'Contact Us - AI Tracks')
+@section('og_description', 'Contact AI Tracks professional team for AI technology consulting, programming development services, UI/UX design and digital transformation solutions.')
 @section('og_image', asset('images/ai-tracks-contact.png'))
-@section('twitter_title', '聯絡我們 - AI Tracks')
-@section('twitter_description', '聯絡 AI Tracks 專業團隊，獲取 AI 技術諮詢、程式開發服務、UI/UX 設計與數位轉型解決方案。')
+@section('twitter_title', 'Contact Us - AI Tracks')
+@section('twitter_description', 'Contact AI Tracks professional team for AI technology consulting, programming development services, UI/UX design and digital transformation solutions.')
 @section('twitter_image', asset('images/ai-tracks-contact.png'))
 
 @section('content')
@@ -16,8 +16,8 @@
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
-                <h1 class="display-5 fw-bold mb-3">聯絡我們</h1>
-                <p class="lead">我們隨時準備為您提供專業的 AI 技術諮詢</p>
+                <h1 class="display-5 fw-bold mb-3">Contact Us</h1>
+                <p class="lead">We are always ready to provide you with professional AI technology consulting</p>
             </div>
         </div>
     </div>
@@ -31,7 +31,7 @@
             <div class="col-lg-8 mb-5">
                 <div class="card shadow-sm border-0">
                     <div class="card-body p-4">
-                        <h3 class="fw-bold mb-4">發送訊息</h3>
+                        <h3 class="fw-bold mb-4">Send Message</h3>
                         
                         @if(session('success'))
                         <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -55,31 +55,31 @@
                             @csrf
                             <div class="row">
                                 <div class="col-md-6 mb-3">
-                                    <label for="name" class="form-label">姓名 <span class="text-danger">*</span></label>
+                                    <label for="name" class="form-label">Name <span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" id="name" name="name" 
                                            value="{{ old('name') }}" required>
                                 </div>
                                 <div class="col-md-6 mb-3">
-                                    <label for="email" class="form-label">電子郵件 <span class="text-danger">*</span></label>
+                                    <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
                                     <input type="email" class="form-control" id="email" name="email" 
                                            value="{{ old('email') }}" required>
                                 </div>
                             </div>
                             
                             <div class="mb-3">
-                                <label for="phone" class="form-label">電話號碼</label>
+                                <label for="phone" class="form-label">Phone Number</label>
                                 <input type="tel" class="form-control" id="phone" name="phone" 
                                        value="{{ old('phone') }}">
                             </div>
                             
                             <div class="mb-3">
-                                <label for="subject" class="form-label">主旨 <span class="text-danger">*</span></label>
+                                <label for="subject" class="form-label">Subject <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" id="subject" name="subject" 
                                        value="{{ old('subject') }}" required>
                             </div>
                             
                             <div class="mb-3">
-                                <label for="message" class="form-label">訊息內容 <span class="text-danger">*</span></label>
+                                <label for="message" class="form-label">Message <span class="text-danger">*</span></label>
                                 <textarea class="form-control" id="message" name="message" rows="6" 
                                           required>{{ old('message') }}</textarea>
                             </div>
@@ -88,14 +88,14 @@
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="privacy" name="privacy" required>
                                     <label class="form-check-label" for="privacy">
-                                        我同意 <a href="#" class="text-decoration-none">隱私政策</a> 和 
-                                        <a href="#" class="text-decoration-none">服務條款</a>
+                                        I agree to the <a href="#" class="text-decoration-none">Privacy Policy</a> and 
+                                        <a href="#" class="text-decoration-none">Terms of Service</a>
                                     </label>
                                 </div>
                             </div>
                             
                             <button type="submit" class="btn btn-primary btn-lg">
-                                <i class="fas fa-paper-plane me-2"></i>發送訊息
+                                <i class="fas fa-paper-plane me-2"></i>Send Message
                             </button>
                         </form>
                     </div>
@@ -106,7 +106,7 @@
             <div class="col-lg-4">
                 <div class="card shadow-sm border-0 mb-4">
                     <div class="card-body p-4">
-                        <h4 class="fw-bold mb-4">聯絡資訊</h4>
+                        <h4 class="fw-bold mb-4">Contact Information</h4>
                         
                         <div class="d-flex align-items-center mb-3">
                             <div class="bg-success bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center me-3" 
@@ -114,7 +114,7 @@
                                 <i class="fas fa-phone text-success"></i>
                             </div>
                             <div>
-                                <h6 class="mb-1">電話</h6>
+                                <h6 class="mb-1">Phone</h6>
                                 <p class="text-muted mb-0">0922-013-171</p>
                             </div>
                         </div>
@@ -125,7 +125,7 @@
                                 <i class="fas fa-envelope text-warning"></i>
                             </div>
                             <div>
-                                <h6 class="mb-1">電子郵件</h6>
+                                <h6 class="mb-1">Email</h6>
                                 <p class="text-muted mb-0">renfu.her@gmail.com</p>
                             </div>
                         </div>
@@ -136,8 +136,8 @@
                                 <i class="fas fa-clock text-info"></i>
                             </div>
                             <div>
-                                <h6 class="mb-1">營業時間</h6>
-                                <p class="text-muted mb-0">週一至週五 9:00-18:00</p>
+                                <h6 class="mb-1">Business Hours</h6>
+                                <p class="text-muted mb-0">Monday to Friday 9:00-18:00</p>
                             </div>
                         </div>
                     </div>
@@ -146,7 +146,7 @@
                 <!-- Social Media -->
                 <div class="card shadow-sm border-0">
                     <div class="card-body p-4">
-                        <h4 class="fw-bold mb-4">關注我們</h4>
+                        <h4 class="fw-bold mb-4">Follow Us</h4>
                         <div class="d-flex gap-3">
                             <a href="#" class="btn btn-outline-primary rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
                                 <i class="fab fa-facebook-f"></i>

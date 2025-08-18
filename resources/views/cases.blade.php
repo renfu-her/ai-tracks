@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
-@section('title', '案例展示 - AI Tracks')
-@section('description', '探索 AI Tracks 的成功案例，包含程式開發、UI/UX 設計、網站建置等專業技術解決方案。了解我們如何運用 AI 技術為客戶創造價值。')
-@section('keywords', '案例展示, 程式開發案例, UI/UX 設計案例, 網站開發案例, AI 技術案例, Laravel 案例')
-@section('og_title', '案例展示 - AI Tracks')
-@section('og_description', '探索 AI Tracks 的成功案例，包含程式開發、UI/UX 設計、網站建置等專業技術解決方案。')
+@section('title', 'Case Studies - AI Tracks')
+@section('description', 'Explore AI Tracks successful cases, including programming development, UI/UX design, website development and other professional technical solutions. Learn how we use AI technology to create value for clients.')
+@section('keywords', 'case studies, programming development cases, UI/UX design cases, website development cases, AI technology cases, Laravel cases')
+@section('og_title', 'Case Studies - AI Tracks')
+@section('og_description', 'Explore AI Tracks successful cases, including programming development, UI/UX design, website development and other professional technical solutions.')
 @section('og_image', asset('images/ai-tracks-cases.png'))
-@section('twitter_title', '案例展示 - AI Tracks')
-@section('twitter_description', '探索 AI Tracks 的成功案例，包含程式開發、UI/UX 設計、網站建置等專業技術解決方案。')
+@section('twitter_title', 'Case Studies - AI Tracks')
+@section('twitter_description', 'Explore AI Tracks successful cases, including programming development, UI/UX design, website development and other professional technical solutions.')
 @section('twitter_image', asset('images/ai-tracks-cases.png'))
 
 @section('content')
@@ -16,8 +16,8 @@
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
-                <h1 class="display-5 fw-bold mb-3">案例展示</h1>
-                <p class="lead">探索我們的成功案例，了解 AI 技術如何改變世界</p>
+                <h1 class="display-5 fw-bold mb-3">Case Studies</h1>
+                <p class="lead">Explore our successful cases and see how AI technology is changing the world</p>
             </div>
         </div>
     </div>
@@ -31,13 +31,13 @@
             <div class="col-12">
                 <div class="d-flex justify-content-between align-items-center flex-wrap">
                     <div class="mb-3">
-                        <span class="text-muted me-3">共 {{ $cases->total() }} 個案例</span>
+                        <span class="text-muted me-3">Total {{ $cases->total() }} cases</span>
                     </div>
                     <div class="mb-3">
                         <select class="form-select" id="sortSelect" style="min-width: 150px;">
-                            <option value="latest">最新案例</option>
-                            <option value="oldest">最舊案例</option>
-                            <option value="name">按名稱排序</option>
+                            <option value="latest">Latest Cases</option>
+                            <option value="oldest">Oldest Cases</option>
+                            <option value="name">Sort by Name</option>
                         </select>
                     </div>
                 </div>
@@ -73,15 +73,15 @@
                             <div class="d-flex justify-content-between align-items-center">
                                 @if($case->url)
                                 <a href="{{ $case->url }}" class="btn btn-outline-primary btn-sm" target="_blank">
-                                    <i class="fas fa-external-link-alt me-1"></i>查看網站
+                                    <i class="fas fa-external-link-alt me-1"></i>View Website
                                 </a>
                                 @else
-                                <span class="text-muted small">無網站連結</span>
+                                <span class="text-muted small">No website link</span>
                                 @endif
                                 
                                 <button class="btn btn-primary btn-sm" 
                                         onclick="showCaseDetails({{ $case->id }})">
-                                    <i class="fas fa-eye me-1"></i>詳細資訊
+                                    <i class="fas fa-eye me-1"></i>Details
                                 </button>
                             </div>
                         </div>
@@ -95,7 +95,7 @@
         @if($cases->hasPages())
         <div class="row">
             <div class="col-12">
-                <nav aria-label="案例分頁">
+                <nav aria-label="Case studies pagination">
                     {{ $cases->links() }}
                 </nav>
             </div>
@@ -109,7 +109,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="caseModalTitle">案例詳細資訊</h5>
+                <h5 class="modal-title" id="caseModalTitle">Case Details</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
             <div class="modal-body" id="caseModalBody">
@@ -149,7 +149,7 @@ function showCaseDetails(caseId) {
             data.case_photos.forEach(function(photo) {
                 photosHtml += `
                     <div class="col-md-4 mb-2">
-                        <img src="/storage/${photo.image}" class="img-fluid rounded" alt="案例照片">
+                        <img src="/storage/${photo.image}" class="img-fluid rounded" alt="Case photo">
                     </div>
                 `;
             });
@@ -167,26 +167,26 @@ function showCaseDetails(caseId) {
         $('#caseModalBody').html(`
             ${photosHtml}
             <div class="mb-3">
-                <strong>案例名稱：</strong> ${data.name}
+                <strong>Case Name:</strong> ${data.name}
             </div>
-            ${data.sub_name ? `<div class="mb-3"><strong>副標題：</strong> ${data.sub_name}</div>` : ''}
-            ${data.url ? `<div class="mb-3"><strong>網站連結：</strong> <a href="${data.url}" target="_blank">${data.url}</a></div>` : ''}
+            ${data.sub_name ? `<div class="mb-3"><strong>Subtitle:</strong> ${data.sub_name}</div>` : ''}
+            ${data.url ? `<div class="mb-3"><strong>Website Link:</strong> <a href="${data.url}" target="_blank">${data.url}</a></div>` : ''}
             <div class="mb-3">
-                <strong>案例內容：</strong>
+                <strong>Case Content:</strong>
                 <div class="mt-2 markdown-content markdown-body">${contentHtml}</div>
             </div>
             <div class="mb-3">
-                <strong>狀態：</strong> 
+                <strong>Status:</strong> 
                 <span class="badge ${data.status ? 'bg-success' : 'bg-secondary'}">
-                    ${data.status ? '已啟用' : '已停用'}
+                    ${data.status ? 'Active' : 'Inactive'}
                 </span>
             </div>
             <div class="mb-3">
-                <strong>建立時間：</strong> ${new Date(data.created_at).toLocaleDateString('zh-TW')}
+                <strong>Created Date:</strong> ${new Date(data.created_at).toLocaleDateString('en-US')}
             </div>
         `);
     }).fail(function() {
-        $('#caseModalBody').html('<div class="alert alert-danger">載入失敗，請稍後再試。</div>');
+        $('#caseModalBody').html('<div class="alert alert-danger">Loading failed, please try again later.</div>');
     });
 }
 </script>
@@ -210,20 +210,20 @@ function showCaseDetails(caseId) {
 
 /* GitHub Markdown Content Styles */
 .markdown-content {
-    /* 使用 GitHub Markdown 樣式 */
+    /* Use GitHub Markdown styles */
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
     font-size: 16px;
     line-height: 1.5;
     word-wrap: break-word;
 }
 
-/* 調整 GitHub Markdown 在 Modal 中的顯示 */
+/* Adjust GitHub Markdown display in Modal */
 .markdown-content.markdown-body {
     background-color: transparent;
     color: inherit;
 }
 
-/* 修正表格文字顏色，確保在 Modal 中清楚可見 */
+/* Fix table text color to ensure visibility in Modal */
 .markdown-content.markdown-body table {
     color: #333 !important;
 }
@@ -247,7 +247,7 @@ function showCaseDetails(caseId) {
     background-color: #ffffff !important;
 }
 
-/* 確保所有文字在 Modal 中清楚可見 */
+/* Ensure all text is clearly visible in Modal */
 .markdown-content.markdown-body h1,
 .markdown-content.markdown-body h2,
 .markdown-content.markdown-body h3,
@@ -271,7 +271,7 @@ function showCaseDetails(caseId) {
     color: #1a7f37 !important;
 }
 
-/* 修正程式碼區塊的文字顏色 */
+/* Fix code block text color */
 .markdown-content.markdown-body pre {
     background-color: #f6f8fa !important;
     color: #333 !important;
@@ -290,7 +290,7 @@ function showCaseDetails(caseId) {
     border: 1px solid #d1d9e0 !important;
 }
 
-/* 修正語法高亮區塊的文字顏色 */
+/* Fix syntax highlighting block text color */
 .markdown-content.markdown-body .highlight {
     background-color: #f6f8fa !important;
 }
