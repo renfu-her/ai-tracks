@@ -1,28 +1,79 @@
-name: CI
+name: Laravel CI & Deploy (No FPM Reload)
 
-on: [push]
+on:
+  push:
+    branches: [ main ]
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
-
     steps:
-    - name: 拉取最新程式碼
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        password: ${{ secrets.PASSWORD }}
-        port: 22
-        script: |
-          cd /home/ai-tracks/htdocs/ai-tracks.com
-          git pull
-          composer install
-          php artisan migrate --force
-          php artisan config:cache
-          php artisan view:cache
-          php artisan route:cache
-          php artisan lang:publish
-          php artisan vendor:publish --force --tag=livewire:assets
-          php artisan filament:assets
-          php artisan filament:cache-components
+      - name: Deploy over SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}   # 如用金鑰，改為 key/key_path
+          port: ${{ secrets.SSH_PORT || 22 }}
+          script: |
+            set -e
+
+            # === 自動選擇相容 PHP CLI（>=8.2；優先 8.4→8.3→8.2→php）===
+            PHP_BIN="/usr/bin/php8.4"
+
+            SERVER_PHP_VER=$("$PHP_BIN" -r "echo PHP_MAJOR_VERSION.'.'.PHP_MINOR_VERSION;")
+            echo "偵測到 PHP CLI：$PHP_BIN（版本 $SERVER_PHP_VER）"
+
+            # === 站點與分支設定 ===
+            APP_DIR="/home/ai-tracks/htdocs/ai-tracks.com"
+            BRANCH="main"
+
+            cd "$APP_DIR"
+
+            echo "==> 切維護模式"
+            $PHP_BIN artisan down || true
+
+            echo "==> 取得最新程式碼"
+            git fetch --all
+            git reset --hard origin/$BRANCH
+
+            echo "==> 安裝相依（Production）"
+            composer install --no-ansi --no-interaction --prefer-dist --no-dev --optimize-autoloader
+
+            echo "==> 清除舊快取"
+            $PHP_BIN artisan config:clear
+            $PHP_BIN artisan route:clear
+            $PHP_BIN artisan view:clear
+
+            echo "==> 檢查 storage:link"
+            [ -L public/storage ] || $PHP_BIN artisan storage:link || true
+
+            echo "==> 權限調整"
+            chmod -R ug+rwx storage bootstrap/cache || true
+
+            echo "==> 資料庫遷移"
+            $PHP_BIN artisan migrate --force
+
+            echo "==> 重建快取"
+            $PHP_BIN artisan config:cache
+            $PHP_BIN artisan route:cache
+            $PHP_BIN artisan view:cache
+            $PHP_BIN artisan event:cache || true
+
+            echo "==> 重啟 Queue/Horizon（如有）"
+            $PHP_BIN artisan queue:restart || true
+            $PHP_BIN artisan horizon:terminate || true
+
+            $PHP_BIN artisan lang:publish
+            $PHP_BIN artisan vendor:publish --force --tag=livewire:assets
+            $PHP_BIN artisan filament:assets
+            $PHP_BIN artisan filament:cache-components
+
+            echo "==> 解除維護模式"
+            $PHP_BIN artisan up
+
+            echo "✅ 部署完成（未執行任何 systemctl reload）"
