@@ -1,4 +1,4 @@
-name: Laravel CI & Deploy (No FPM Reload)
+name: Laravel CI & Deploy
 
 on:
   push:
@@ -22,11 +22,9 @@ jobs:
           script: |
             set -e
 
-            # === 自動選擇相容 PHP CLI（>=8.2；優先 8.4→8.3→8.2→php）===
+            # === PHP CLI ===
             PHP_BIN="/usr/bin/php8.4"
-
-            SERVER_PHP_VER=$("$PHP_BIN" -r "echo PHP_MAJOR_VERSION.'.'.PHP_MINOR_VERSION;")
-            echo "偵測到 PHP CLI：$PHP_BIN（版本 $SERVER_PHP_VER）"
+            echo "偵測到 PHP CLI：$PHP_BIN"
 
             # === 站點與分支設定 ===
             APP_DIR="/home/ai-tracks/htdocs/ai-tracks.com"
