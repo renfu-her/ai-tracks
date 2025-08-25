@@ -142,7 +142,7 @@
 }
 
 .markdown-content.markdown-body td {
-    color: #333 !important;
+    color: #fff !important;
 }
 
 .markdown-content.markdown-body h1,
