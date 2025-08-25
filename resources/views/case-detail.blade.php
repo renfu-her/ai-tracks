@@ -194,7 +194,7 @@
 }
 
 .markdown-content.markdown-body td {
-    color: #fff !important;
+    color: #333 !important;
 }
 
 .markdown-content.markdown-body h1,
