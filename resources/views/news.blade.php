@@ -16,8 +16,8 @@
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
-                <h1 class="display-5 fw-bold mb-3">最新消息</h1>
-                <p class="lead">掌握最新的 AI 技術趨勢和公司動態</p>
+                <h1 class="display-5 fw-bold mb-3">Latest News</h1>
+                <p class="lead">Stay updated with the latest AI technology trends and company updates</p>
             </div>
         </div>
     </div>
@@ -31,7 +31,7 @@
             <div class="col-12">
                 <div class="d-flex justify-content-between align-items-center flex-wrap">
                     <div class="mb-3">
-                        <span class="text-muted me-3">共 {{ $news->total() }} 則消息</span>
+                        <span class="text-muted me-3">Total {{ $news->total() }} news items</span>
                     </div>
                 </div>
             </div>
@@ -61,7 +61,7 @@
                         
                         <div class="mt-auto">
                             <a href="{{ route('news.detail', $item->id) }}" class="btn btn-primary btn-sm w-100">
-                                <i class="fas fa-eye me-1"></i>閱讀全文
+                                <i class="fas fa-eye me-1"></i>Read Full Article
                             </a>
                         </div>
                     </div>

@@ -1,15 +1,15 @@
 @extends('layouts.app')
 
-@section('title', $case->name . ' - 案例詳情')
-@section('description', $case->sub_name ?: '查看我們的專案案例詳細內容')
+@section('title', $case->name . ' - Case Details')
+@section('description', $case->sub_name ?: 'View our project case details')
 
 @section('content')
 <!-- Breadcrumb -->
 <nav aria-label="breadcrumb" class="py-3 bg-light">
     <div class="container">
         <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item"><a href="{{ route('home') }}">首頁</a></li>
-            <li class="breadcrumb-item"><a href="{{ route('cases') }}">案例展示</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('cases') }}">Case Studies</a></li>
             <li class="breadcrumb-item active" aria-current="page">{{ $case->name }}</li>
         </ol>
     </div>
@@ -29,7 +29,7 @@
                     @if($case->url)
                         <div class="mb-3">
                             <a href="{{ $case->url }}" class="btn btn-outline-primary" target="_blank">
-                                <i class="fas fa-external-link-alt me-2"></i>查看網站
+                                <i class="fas fa-external-link-alt me-2"></i>View Website
                             </a>
                         </div>
                     @endif
@@ -64,7 +64,7 @@
                                         <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
                                             <img src="{{ Storage::url($photo->image) }}" 
                                                  class="d-block w-100" 
-                                                 alt="{{ $case->name }} - 圖片 {{ $index + 1 }}"
+                                                 alt="{{ $case->name }} - Image {{ $index + 1 }}"
                                                  style="height: 500px; object-fit: cover;">
                                         </div>
                                     @endforeach
@@ -84,7 +84,7 @@
 
                 <!-- Case Content -->
                 <div class="mb-5">
-                    <h3 class="mb-3">專案詳情</h3>
+                    <h3 class="mb-3">Project Details</h3>
                     <div class="markdown-content markdown-body bg-white p-4 rounded border">
                         {!! $case->content !!}
                     </div>
@@ -93,7 +93,7 @@
                 <!-- Back Button -->
                 <div class="mb-4">
                     <a href="{{ route('cases') }}" class="btn btn-secondary">
-                        <i class="fas fa-arrow-left me-2"></i>返回案例列表
+                        <i class="fas fa-arrow-left me-2"></i>Back to Cases
                     </a>
                 </div>
             </div>
@@ -104,30 +104,30 @@
                     <!-- Case Info Card -->
                     <div class="card mb-4">
                         <div class="card-header">
-                            <h5 class="card-title mb-0">專案資訊</h5>
+                            <h5 class="card-title mb-0">Project Information</h5>
                         </div>
                         <div class="card-body">
                             <div class="mb-3">
-                                <strong>專案名稱：</strong><br>
+                                <strong>Project Name:</strong><br>
                                 {{ $case->name }}
                             </div>
                             @if($case->sub_name)
                                 <div class="mb-3">
-                                    <strong>專案副標題：</strong><br>
+                                    <strong>Project Subtitle:</strong><br>
                                     {{ $case->sub_name }}
                                 </div>
                             @endif
                             @if($case->url)
                                 <div class="mb-3">
-                                    <strong>網站連結：</strong><br>
+                                    <strong>Website Link:</strong><br>
                                     <a href="{{ $case->url }}" target="_blank" class="text-break">
                                         {{ $case->url }}
                                     </a>
                                 </div>
                             @endif
                             <div class="mb-0">
-                                <strong>建立時間：</strong><br>
-                                {{ $case->created_at->format('Y年m月d日') }}
+                                <strong>Created Date:</strong><br>
+                                {{ $case->created_at->format('Y-m-d') }}
                             </div>
                         </div>
                     </div>
@@ -136,7 +136,7 @@
                     @if($relatedCases->count() > 0)
                         <div class="card">
                             <div class="card-header">
-                                <h5 class="card-title mb-0">相關案例</h5>
+                                <h5 class="card-title mb-0">Related Cases</h5>
                             </div>
                             <div class="card-body">
                                 @foreach($relatedCases as $relatedCase)

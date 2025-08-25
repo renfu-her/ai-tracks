@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $news->title . ' - 最新消息')
+@section('title', $news->title . ' - Latest News')
 @section('description', Str::limit(strip_tags($news->content), 160))
 
 @section('content')
@@ -8,8 +8,8 @@
 <nav aria-label="breadcrumb" class="py-3 bg-light">
     <div class="container">
         <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item"><a href="{{ route('home') }}">首頁</a></li>
-            <li class="breadcrumb-item"><a href="{{ route('news') }}">最新消息</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('news') }}">Latest News</a></li>
             <li class="breadcrumb-item active" aria-current="page">{{ $news->title }}</li>
         </ol>
     </div>
@@ -26,7 +26,7 @@
                         <h1 class="display-5 fw-bold mb-3">{{ $news->title }}</h1>
                         <div class="d-flex align-items-center text-muted mb-4">
                             <i class="fas fa-calendar-alt me-2"></i>
-                            <span>{{ $news->published_at->format('Y年m月d日') }}</span>
+                            <span>{{ $news->published_at->format('Y-m-d') }}</span>
                         </div>
                     </div>
 
@@ -50,7 +50,7 @@
                     <!-- Back Button -->
                     <div class="mb-4">
                         <a href="{{ route('news') }}" class="btn btn-secondary">
-                            <i class="fas fa-arrow-left me-2"></i>返回消息列表
+                            <i class="fas fa-arrow-left me-2"></i>Back to News
                         </a>
                     </div>
                 </article>
@@ -62,21 +62,21 @@
                     <!-- News Info Card -->
                     <div class="card mb-4">
                         <div class="card-header">
-                            <h5 class="card-title mb-0">消息資訊</h5>
+                            <h5 class="card-title mb-0">News Information</h5>
                         </div>
                         <div class="card-body">
                             <div class="mb-3">
-                                <strong>標題：</strong><br>
+                                <strong>Title:</strong><br>
                                 {{ $news->title }}
                             </div>
                             <div class="mb-3">
-                                <strong>發布日期：</strong><br>
-                                {{ $news->published_at->format('Y年m月d日') }}
+                                <strong>Published Date:</strong><br>
+                                {{ $news->published_at->format('Y-m-d') }}
                             </div>
                             <div class="mb-0">
-                                <strong>狀態：</strong><br>
+                                <strong>Status:</strong><br>
                                 <span class="badge {{ $news->is_active ? 'bg-success' : 'bg-secondary' }}">
-                                    {{ $news->is_active ? '已發布' : '草稿' }}
+                                    {{ $news->is_active ? 'Published' : 'Draft' }}
                                 </span>
                             </div>
                         </div>
@@ -86,7 +86,7 @@
                     @if($relatedNews->count() > 0)
                         <div class="card">
                             <div class="card-header">
-                                <h5 class="card-title mb-0">相關消息</h5>
+                                <h5 class="card-title mb-0">Related News</h5>
                             </div>
                             <div class="card-body">
                                 @foreach($relatedNews as $relatedItem)

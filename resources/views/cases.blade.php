@@ -16,8 +16,8 @@
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
-                <h1 class="display-5 fw-bold mb-3">案例展示</h1>
-                <p class="lead">探索我們的成功案例，了解 AI 技術如何改變世界</p>
+                <h1 class="display-5 fw-bold mb-3">Case Studies</h1>
+                <p class="lead">Explore our successful cases and see how AI technology is changing the world</p>
             </div>
         </div>
     </div>
@@ -31,13 +31,13 @@
             <div class="col-12">
                 <div class="d-flex justify-content-between align-items-center flex-wrap">
                     <div class="mb-3">
-                        <span class="text-muted me-3">共 {{ $cases->total() }} 個案例</span>
+                        <span class="text-muted me-3">Total {{ $cases->total() }} cases</span>
                     </div>
                     <div class="mb-3">
                         <select class="form-select" id="sortSelect" style="min-width: 150px;">
-                            <option value="latest">最新案例</option>
-                            <option value="oldest">最舊案例</option>
-                            <option value="name">按名稱排序</option>
+                            <option value="latest">Latest Cases</option>
+                            <option value="oldest">Oldest Cases</option>
+                            <option value="name">Sort by Name</option>
                         </select>
                     </div>
                 </div>
@@ -73,14 +73,14 @@
                             <div class="d-flex justify-content-between align-items-center">
                                 @if($case->url)
                                 <a href="{{ $case->url }}" class="btn btn-outline-primary btn-sm" target="_blank">
-                                    <i class="fas fa-external-link-alt me-1"></i>查看網站
+                                    <i class="fas fa-external-link-alt me-1"></i>View Website
                                 </a>
                                 @else
-                                <span class="text-muted small">無網站連結</span>
+                                <span class="text-muted small">No website link</span>
                                 @endif
 
                                 <a href="{{ route('cases.detail', $case->id) }}" class="btn btn-primary btn-sm">
-                                    <i class="fas fa-eye me-1"></i>查看詳情
+                                    <i class="fas fa-eye me-1"></i>Details
                                 </a>
                             </div>
                         </div>
