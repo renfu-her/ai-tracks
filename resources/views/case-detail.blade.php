@@ -85,7 +85,7 @@
                                     <!-- Case Content -->
                     <div class="mb-5">
                         <h3 class="mb-3">Project Details</h3>
-                        <div class="">
+                        <div class="markdown-content markdown-body bg-white p-4 rounded border">
                             {!! $case->content !!}
                         </div>
                     </div>
@@ -176,7 +176,10 @@
 @endsection
 
 @push('styles')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.8.1/github-markdown.css">
+<style>
 
+</style>
 @endpush
 
 @push('scripts')
