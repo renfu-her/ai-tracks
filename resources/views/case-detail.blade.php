@@ -176,7 +176,7 @@
 @endsection
 
 @push('styles')
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.8.1/github-markdown.css">
+<link rel="stylesheet" href="{{ asset('css/github-markdown-light.css') }}">
 <style>
 
 </style>
