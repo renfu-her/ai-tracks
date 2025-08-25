@@ -75,7 +75,6 @@ class FrontendController extends Controller
             ->take(3)
             ->get();
 
-        dd($case->content);
 
         return view('case-detail', compact('case', 'relatedCases'));
     }

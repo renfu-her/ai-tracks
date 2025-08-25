@@ -86,7 +86,7 @@
                     <div class="mb-5">
                         <h3 class="mb-3">Project Details</h3>
                         <div class="markdown-content markdown-body bg-white p-4 rounded border">
-                            {{ $case->content }}
+                            {!! $case->content !!}
                         </div>
                     </div>
 
