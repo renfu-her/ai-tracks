@@ -476,3 +476,8 @@ section {
         box-shadow: none;
     }
 } 
+
+
+.markdown-content.markdown-body td {
+    color: #fff !important;
+}
