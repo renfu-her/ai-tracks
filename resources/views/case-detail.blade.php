@@ -82,13 +82,13 @@
                     </div>
                 @endif
 
-                <!-- Case Content -->
-                <div class="mb-5">
-                    <h3 class="mb-3">Project Details</h3>
-                    <div class="markdown-content markdown-body bg-white p-4 rounded border">
-                        {!! $case->content !!}
+                                    <!-- Case Content -->
+                    <div class="mb-5">
+                        <h3 class="mb-3">Project Details</h3>
+                        <div class="markdown-content markdown-body bg-white p-4 rounded border">
+                            {!! strip_tags($case->content, '<p><br><strong><em><ul><ol><li><h1><h2><h3><h4><h5><h6><blockquote><code><pre><table><tr><td><th>') !!}
+                        </div>
                     </div>
-                </div>
 
                 <!-- Back Button -->
                 <div class="mb-4">
@@ -218,7 +218,23 @@
 }
 
 .markdown-content.markdown-body pre {
-    background-color: #f6f8fa;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    white-space: normal;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.markdown-content.markdown-body pre code {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
 }
 
 .markdown-content.markdown-body blockquote {

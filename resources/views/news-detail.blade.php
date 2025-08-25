@@ -43,7 +43,7 @@
                     <!-- News Content -->
                     <div class="mb-5">
                         <div class="markdown-content markdown-body bg-white p-4 rounded border">
-                            {!! $news->content !!}
+                            {!! strip_tags($news->content, '<p><br><strong><em><ul><ol><li><h1><h2><h3><h4><h5><h6><blockquote><code><pre><table><tr><td><th>') !!}
                         </div>
                     </div>
 
@@ -166,7 +166,23 @@
 }
 
 .markdown-content.markdown-body pre {
-    background-color: #f6f8fa;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    white-space: normal;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.markdown-content.markdown-body pre code {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
 }
 
 .markdown-content.markdown-body blockquote {
