@@ -176,72 +176,7 @@
 @endsection
 
 @push('styles')
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.8.1/github-markdown.css">
-<style>
-.markdown-content.markdown-body {
-    background-color: transparent;
-    font-size: 16px;
-}
 
-.markdown-content.markdown-body table {
-    color: #333 !important;
-    background-color: #fff;
-}
-
-.markdown-content.markdown-body th {
-    background-color: #f8f9fa;
-    color: #333 !important;
-}
-
-.markdown-content.markdown-body td {
-    color: #fff !important;
-}
-
-.markdown-content.markdown-body h1,
-.markdown-content.markdown-body h2,
-.markdown-content.markdown-body h3,
-.markdown-content.markdown-body h4,
-.markdown-content.markdown-body h5,
-.markdown-content.markdown-body h6 {
-    color: #333 !important;
-}
-
-.markdown-content.markdown-body p,
-.markdown-content.markdown-body li,
-.markdown-content.markdown-body span {
-    color: #333 !important;
-}
-
-.markdown-content.markdown-body code {
-    background-color: #f6f8fa;
-    color: #333 !important;
-}
-
-.markdown-content.markdown-body pre {
-    background-color: transparent;
-    border: none;
-    padding: 0;
-    margin: 0;
-    white-space: normal;
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
-}
-
-.markdown-content.markdown-body pre code {
-    background-color: transparent;
-    border: none;
-    padding: 0;
-    font-family: inherit;
-    font-size: inherit;
-    color: inherit;
-}
-
-.markdown-content.markdown-body blockquote {
-    color: #333 !important;
-    border-left: 4px solid #dfe2e5;
-}
-</style>
 @endpush
 
 @push('scripts')
