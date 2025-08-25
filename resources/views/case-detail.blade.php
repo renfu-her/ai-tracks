@@ -178,7 +178,7 @@
 @push('styles')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.8.1/github-markdown.css">
 <style>
-.markdown-content.markdown-body {
+/* .markdown-content.markdown-body {
     background-color: transparent;
     font-size: 16px;
 }
@@ -240,7 +240,7 @@
 .markdown-content.markdown-body blockquote {
     color: #333 !important;
     border-left: 4px solid #dfe2e5;
-}
+} */
 </style>
 @endpush
 
