@@ -43,7 +43,7 @@
                     <!-- News Content -->
                     <div class="mb-5">
                         <div class="markdown-content markdown-body bg-white p-4 rounded border">
-                            {!! strip_tags($news->content, '<p><br><strong><em><ul><ol><li><h1><h2><h3><h4><h5><h6><blockquote><code><pre><table><tr><td><th>') !!}
+                            {!! $news->content !!}
                         </div>
                     </div>
 
