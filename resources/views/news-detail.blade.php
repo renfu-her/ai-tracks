@@ -49,7 +49,7 @@
 
                     <!-- Back Button -->
                     <div class="mb-4">
-                        <a href="{{ route('news') }}" class="btn btn-secondary">
+                        <a href="{{ route('news') }}" class="btn btn-primary">
                             <i class="fas fa-arrow-left me-2"></i>Back to News
                         </a>
                     </div>

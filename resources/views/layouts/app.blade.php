@@ -103,27 +103,27 @@
             <div class="row">
                 <div class="col-md-6">
                     <h5 class="mb-3">AI Tracks</h5>
-                    <p class="text-muted">Professional AI technology solution provider, creating the best digital experience for you.</p>
+                    <p class="text-white-50">Professional AI technology solution provider, creating the best digital experience for you.</p>
                 </div>
                 <div class="col-md-3">
                     <h6 class="mb-3">Quick Links</h6>
                     <ul class="list-unstyled">
-                        <li><a href="{{ route('home') }}" class="text-muted text-decoration-none">Home</a></li>
-                        <li><a href="{{ route('cases') }}" class="text-muted text-decoration-none">Case Studies</a></li>
-                        <li><a href="{{ route('news') }}" class="text-muted text-decoration-none">News</a></li>
-                        <li><a href="{{ route('contact') }}" class="text-muted text-decoration-none">Contact</a></li>
+                        <li><a href="{{ route('home') }}" class="text-white-50 text-decoration-none">Home</a></li>
+                        <li><a href="{{ route('cases') }}" class="text-white-50 text-decoration-none">Case Studies</a></li>
+                        <li><a href="{{ route('news') }}" class="text-white-50 text-decoration-none">News</a></li>
+                        <li><a href="{{ route('contact') }}" class="text-white-50 text-decoration-none">Contact</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3">
                     <h6 class="mb-3">Contact Information</h6>
-                    <ul class="list-unstyled text-muted">
+                    <ul class="list-unstyled text-white-50">
                         <li><i class="fas fa-phone me-2"></i>0922-013-171</li>
                         <li><i class="fas fa-envelope me-2"></i>renfu.her@gmail.com</li>
                     </ul>
                 </div>
             </div>
             <hr class="my-4">
-            <div class="text-center text-muted">
+            <div class="text-center text-white-50">
                 <small>&copy; 2024 AI Tracks. All rights reserved.</small>
             </div>
         </div>
