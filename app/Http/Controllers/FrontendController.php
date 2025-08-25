@@ -61,6 +61,23 @@ class FrontendController extends Controller
         return view('cases', compact('cases'));
     }
 
+    public function caseDetail($id)
+    {
+        $case = ProjectCase::with(['casePhotos' => function ($query) {
+            $query->orderBy('sort_order');
+        }])->where('status', true)->findOrFail($id);
+
+        // 取得其他相關案例（排除當前案例）
+        $relatedCases = ProjectCase::with('casePhotos')
+            ->where('status', true)
+            ->where('id', '!=', $id)
+            ->latest()
+            ->take(3)
+            ->get();
+
+        return view('case-detail', compact('case', 'relatedCases'));
+    }
+
     public function news(Request $request)
     {
         $query = News::where('is_active', true);

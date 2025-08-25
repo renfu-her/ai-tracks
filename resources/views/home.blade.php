@@ -120,7 +120,7 @@
                         <div class="card h-100 shadow-sm border-0 hover-lift d-flex flex-column">
                             <!-- Top: Image and title area -->
                             <div class="flex-grow-1">
-                                <a href="{{ route('cases') }}" class="text-decoration-none">
+                                <a href="{{ route('cases.detail', $case->id) }}" class="text-decoration-none">
                                     @if ($case->casePhotos->count() > 0)
                                         <img src="{{ Storage::url($case->casePhotos->first()->image) }}"
                                             class="card-img-top" alt="{{ $case->name }}"
