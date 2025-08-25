@@ -8,6 +8,7 @@ Route::get('/', [FrontendController::class, 'home'])->name('home');
 Route::get('/cases', [FrontendController::class, 'cases'])->name('cases');
 Route::get('/cases/{id}', [FrontendController::class, 'caseDetail'])->name('cases.detail');
 Route::get('/news', [FrontendController::class, 'news'])->name('news');
+Route::get('/news/{id}', [FrontendController::class, 'newsDetail'])->name('news.detail');
 Route::get('/contact', [FrontendController::class, 'contact'])->name('contact');
 Route::post('/contact', [FrontendController::class, 'storeContact'])->name('contact.store');
 

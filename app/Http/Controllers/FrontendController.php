@@ -87,6 +87,20 @@ class FrontendController extends Controller
         return view('news', compact('news'));
     }
 
+    public function newsDetail($id)
+    {
+        $news = News::where('is_active', true)->findOrFail($id);
+
+        // 取得其他相關消息（排除當前消息）
+        $relatedNews = News::where('is_active', true)
+            ->where('id', '!=', $id)
+            ->latest('created_at')
+            ->take(3)
+            ->get();
+
+        return view('news-detail', compact('news', 'relatedNews'));
+    }
+
     public function contact()
     {
         return view('contact');

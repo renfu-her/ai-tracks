@@ -37,9 +37,9 @@ php artisan filament:cache-components
 
 3. **最新消息頁面 (News)**
    - 消息列表展示 - 包含標題、圖片和發布日期
-   - 點擊消息可查看詳細內容 (Modal 彈窗)
+   - 點擊消息可查看詳細內容 (獨立詳細頁面)
    - 支援 Markdown 內容渲染
-   - 分類篩選功能
+   - 相關消息推薦功能
 
 4. **聯絡我們頁面 (Contact)**
    - 聯絡表單 - 姓名、Email、電話、主旨、訊息
@@ -76,7 +76,7 @@ php artisan filament:cache-components
 - **SEO 優化**：Meta 標籤、Open Graph、Twitter Cards、Sitemap、Robots.txt
 - **使用者體驗**：回到頂部按鈕、平滑滾動、載入動畫
 - **表單驗證**：前後端雙重驗證
-- **AJAX 互動**：動態載入案例和消息詳細內容
+- **詳細頁面**：案例和消息都有獨立的詳細頁面，提供更好的 SEO 和使用者體驗
 
 ### 📱 **響應式設計**
 - **桌面版**：完整功能展示，固定高度輪播
