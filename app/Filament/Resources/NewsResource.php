@@ -14,6 +14,8 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
 
 class NewsResource extends Resource
 {
@@ -51,7 +53,7 @@ class NewsResource extends Resource
                         fn($file): string => (string) Str::uuid() . '.webp'
                     )
                     ->saveUploadedFileUsing(function ($file) {
-                        $manager = new \Intervention\Image\ImageManager(new \Intervention\Image\Drivers\Gd\Driver());
+                        $manager = new ImageManager(new Driver());
                         $image = $manager->read($file);
                         $image->scale(1960, null);
                         $filename = Str::uuid()->toString() . '.webp';
