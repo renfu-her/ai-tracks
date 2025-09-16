@@ -53,7 +53,7 @@ class NewsResource extends Resource
                     ->saveUploadedFileUsing(function ($file) {
                         $manager = new \Intervention\Image\ImageManager(new \Intervention\Image\Drivers\Gd\Driver());
                         $image = $manager->read($file);
-                        $image->cover(1024, 1024);
+                        $image->scale(1960, null);
                         $filename = Str::uuid()->toString() . '.webp';
                         if (!file_exists(storage_path('app/public/news'))) {
                             mkdir(storage_path('app/public/news'), 0755, true);
